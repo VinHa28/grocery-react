@@ -1,0 +1,63 @@
+@use "../../scss/abstracts";
+
+.container.home{
+  margin-bottom: 100px;
+}
+
+.home {
+  &__container {
+    margin-top: 40px;
+
+    @include abstracts.screen(md) {
+      margin-top: 30px;
+    }
+  }
+  &__list{
+    margin-top: 20px !important;
+    row-gap: 30px;
+    @include abstracts.screen(lg) {
+      row-gap: 0;
+    }
+
+  }
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.42; /* 141.667% */
+  }
+
+  &__cate {
+    --grid-gutter-x: 51px;
+    @include abstracts.screen(lg) {
+        --grid-gutter-x: 24px;
+    }
+
+    @include abstracts.screen(md) {
+        --grid-gutter-y: 20px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// Filter Button
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: var(--filter-btn-bg);   
+  color: var(--filter-btn-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.43; /* 142.857% */
+  cursor: pointer;
+  &__icon {
+      filter: var(--filter-btn-icon-filter);
+  }
+}

@@ -1,0 +1,364 @@
+@use "../../scss/abstracts";
+
+%flexItemsCenter {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  background-color: var(--header-bg-color);
+  padding: 16px;
+
+  @include abstracts.screen(lg) {
+    box-shadow: 0px 20px 60px 10px var(--header-lg-shadow);
+    padding: 20px;
+  }
+
+  @include abstracts.screen(sm) {
+    padding: 16px;
+  }
+
+  &__logo {
+    @include abstracts.screen(lg) {
+      margin-left: 40px;
+      column-gap: 10px;
+      .logo__title {
+        font-size: 1.8rem;
+      }
+      .logo__img {
+        width: 24px;
+      }
+    }
+
+    @include abstracts.screen(md) {
+      column-gap: 10px;
+      margin-left: 0;
+    }
+  }
+}
+
+.top-bar {
+  position: relative;
+  z-index: 1;
+
+  @extend %flexItemsCenter;
+
+  @include abstracts.screen(md) {
+    justify-content: space-between;
+  }
+
+}
+
+.navbar {
+  margin-left: 144px;
+
+  @include abstracts.screen(xl) {
+    margin-left: 50px;
+  }
+
+  @include abstracts.screen(lg) {
+
+    translate: -100%;
+    transition: translate 0.4s;
+
+    position: fixed;
+    inset: 0 50% 0 0;
+    background: var(--sidebar-bg);
+    margin-left: 0;
+    z-index: 9;
+    padding: 40px 0 40px 40px;
+    color: var(--sidebar-text-color);
+
+    border-radius: 0px 20px 20px 0px;
+
+    &.show {
+      translate: 0;
+      box-shadow: 0px 40px 90px 20px var(--sidebar-shadow);
+    }
+
+    &.show~&__overlay {
+      visibility: visible;
+      opacity: 1;
+    }
+
+  }
+
+  @include abstracts.screen(md) {
+    inset: 0 20% 0 0;
+    padding: 20px 0 20px 20px;
+  }
+
+  &__close-btn img {
+    filter: var(--sidebar-icon-filter);
+  }
+
+  &__close-btn {
+    display: none;
+    padding: 10px 0;
+
+    @include abstracts.screen(lg) {
+      display: block;
+    }
+  }
+
+  &__overlay {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity, visibility;
+    transition-duration: 0.4s;
+
+    @include abstracts.screen(lg) {
+
+      position: fixed;
+      inset: 0;
+      z-index: 8;
+      background-color: rgba($color: #000000, $alpha: 0.4);
+    }
+  }
+
+  &__menu {
+    @extend %flexItemsCenter;
+
+    @include abstracts.screen(lg) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      height: calc(100% - 40px);
+    }
+
+  @include abstracts.screen(md) {
+    height: calc(100% - 120px);
+  }
+  }
+
+  &__link {
+    @extend %flexItemsCenter;
+
+    padding: 0 15px;
+    column-gap: 6px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 146.667%;
+    height: 50px;
+
+    @include abstracts.screen(lg) {
+      padding-left: 0;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      /* 150% */
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    &:first-child a {
+      padding-left: 0;
+    }
+
+    &:last-child a {
+      padding-right: 0;
+    }
+
+    &:hover .dropdown {
+      display: block;
+    }
+
+    @include abstracts.screen(lg) {
+      width: 100%;
+      padding-right: 40px;
+
+      & a {
+        padding-right: 0;
+      }
+
+      &:hover .dropdown {
+        display: none;
+      }
+
+      &--active .dropdown {
+        display: block !important;
+      }
+
+    }
+
+    @include abstracts.screen(sm) {
+      padding-right: 20px;
+    }
+  }
+
+  &__arrow {
+    transition: rotate 0.2s;
+
+    @include abstracts.screen(lg) {
+      rotate: -90deg;
+    }
+  }
+
+  &__item--active &__arrow {
+    rotate: 0deg;
+  }
+}
+
+.top-action {
+  margin-left: auto;
+  gap: 20px;
+  @extend %flexItemsCenter;
+
+  @include abstracts.screen(lg) {
+    gap: 16px;
+  }
+
+  @include abstracts.screen(md) {
+    margin-left: 0;
+
+    &__sign-up {
+      padding: 0 12px !important;
+      font-size: 1.5rem !important;
+    }
+  }
+
+  &__btn-wrap {
+    position: relative;
+    &:hover .action-dropdown {
+      display: block;
+    }
+  }
+
+  &__group {
+    @extend %flexItemsCenter;
+
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--top-action-group-bg-color);
+    box-shadow: 0px 20px 60px 10px var(--top-action-group-shadow);
+    height: 50px;
+    min-width: 50px;
+  }
+
+  &__group--single {
+    @include abstracts.screen(lg) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    @extend %flexItemsCenter;
+
+    column-gap: 10px;
+    padding: 13px 20px;
+    cursor: pointer;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.467;
+  }
+
+  &__group--single &__btn {
+    padding: 13px;
+  }
+
+  &__separate {
+    width: 1px;
+    height: 30px;
+    background-color: var(--top-action-group-separate);
+  }
+
+  &__user {
+    position: relative;
+
+    &:hover .action-dropdown {
+      display: block;
+    }
+  }
+
+  &__dropdown {
+    right: 0 !important;
+    width: min(300px, 100vw);
+    &-arrow {
+      right: 15px;
+      top: -14px;
+    }
+  }
+
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: block;
+  }
+}
+
+.nav-btn {
+  align-items: center;
+  padding-right: 40px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.467;
+  /* 146.667% */
+  padding: 10px 40px 10px 0;
+
+  @include abstracts.screen(sm) {
+    padding-right: 20px;
+  }
+
+  &__title {
+    margin-left: 16px;
+  }
+
+  &__qnt {
+    margin-left: auto;
+  }
+
+  &__icon {
+    filter: var(--sidebar-icon-filter);
+  } 
+}
+
+
+.user-menu {
+  text-align: left;
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    line-height: 1.4444;
+  }
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  &__name {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  &__list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  &__separate {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--top-action-group-separate);
+  }
+
+  &__icon{
+    width: 15px;
+  }
+}

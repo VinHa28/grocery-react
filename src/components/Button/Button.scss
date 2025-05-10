@@ -1,0 +1,48 @@
+@use "../../scss/abstracts";
+
+// Buttons
+.btn {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 20px;
+    
+    background-color: #f8f8f8;
+    font-size: 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+
+    border-radius: 6px;
+
+    &--text {
+        background-color: transparent;
+        font-weight: 400;
+    }
+
+    &--primary {
+        background-color: #FFB700;
+        color: #1A162E;
+    }
+
+    &--outline {
+        background-color: transparent;
+        border: 1px solid #d2d1d6;
+    }
+
+    &--rounded{
+        border-radius: 99px;
+    }
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &--disable, &[disabled] {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+     
+}

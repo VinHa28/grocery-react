@@ -1,0 +1,113 @@
+@use "../../scss/abstracts";
+
+.product-info {
+    padding: 60px;
+    background-color: var(--product-info-bg);
+
+    @include abstracts.screen(xl) {
+        padding: 40px;
+    }
+
+    @include abstracts.screen(lg) {
+        border-radius: 20px;
+    }
+
+    @include abstracts.screen(md) {
+        border-radius: 0 0 20px 20px;
+        padding: 0 16px 16px 16px;
+    }
+
+    &__heading {
+        font-size: 2.6rem;
+        font-weight: 500;
+        line-height: 1.385;
+        /* 138.462% */
+        padding-right: 18px;
+
+        @include abstracts.screen(md) {
+            font-size: 1.8rem;
+            font-weight: 700;
+            padding-right: 0;
+        }
+    }
+
+    &__label {
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 20px;
+
+        @include abstracts.screen(xl) {
+            margin-top: 20px;
+        }
+    }
+
+    &__tags {
+        margin-top: 20px;
+    }
+
+    &__tag {
+        background-color: var(--product-tag-bg);
+    }
+
+    &__cart {
+        margin-top: 30px;
+        border-radius: 6px;
+        border: 1px solid #B9BABE;
+        padding: 20px;
+
+        @include abstracts.screen(xl) {
+            margin-top: 20px;
+        }
+
+        &-row {
+            display: flex;
+            align-items: center;
+        }
+
+        &-price {
+            color: var(--product-price-color);
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 1.5;
+            /* 150% */
+        }
+
+        &-tax {
+            color: #67B044;
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1.43;
+            /* 142.857% */
+
+            display: block;
+            margin-left: 10px;
+            padding: 2px 8px;
+            background: var(--product-tax-bg);
+        }
+
+        &-total {
+            margin: 20px 0;
+
+            color: var(--product-price-color);
+            font-size: 2.6rem;
+            font-weight: 500;
+            line-height: 1.3846;
+            /* 138.462% */
+        }
+
+        &-btn {
+            height: 46px;
+            flex: 1;
+        }
+    }
+
+    &__like-btn {
+        width: 46px;
+        height: 46px;
+        border-radius: 6px;
+        border: 1px solid var(--Secondary-Color-Secondary-3, #D2D1D6);
+        background-color: transparent;
+        margin-left: 20px;
+    }
+
+}

@@ -1,0 +1,366 @@
+@use "../../scss/abstracts";
+
+.form {
+
+    &:has(:invalid) &__submit-btn{
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    &__group {
+        position: relative;
+        margin-top: 30px;
+        width: 100%;
+        @include abstracts.screen(md) {
+            margin-top: 20px;
+        }
+
+    }
+
+    &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
+        .form__text-input {
+            border-color: #ed4337;
+            background-color: rgba($color: #ed4337, $alpha: 0.1);
+        }
+
+        .form__input-icon {
+            display: none;
+        }
+
+        .form__error, .form__input-icon--error {
+            display: block;
+        }
+    }
+
+    &__text-input, &__text-area {
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        border: 1px solid #D2D1D6;
+        &:focus-within {
+            border-color: #77DAE6;
+        }
+    }
+    
+    &__text-input{
+        height: 48px;
+        padding: 0 12px;
+        position: relative;
+    }
+
+    &__select-dialog{
+        position: absolute;
+        bottom: 52px;
+        left: 10px;
+        display: flex;
+        flex-direction: column;
+        max-height: 380px;
+        background-color: var(--modal-bg);
+        border: 1px solid #d1d2d6;
+        border-radius: 10px;
+        padding-bottom: 10px;
+        box-shadow: 0 0 5px var(--modal-shadow);
+        z-index: 1;
+        
+        opacity: 0;
+        visibility: hidden;
+        translate: 0 8px;
+        transition: 0.1s;
+        
+        @include abstracts.screen(sm) {
+            position: fixed;
+            max-width: initial;
+            max-height: initial;
+            inset: 0;
+            border-radius: 0;
+            padding: 18px;
+        }
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            translate: 0;
+        }
+    }
+
+
+    &__dialog-heading {
+        font-size: 1.6rem;
+        font-weight: 500;
+        text-align: center;
+        padding: 5px;
+    }
+
+    &__close-dialog {
+        font-size: 3rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 12px 18px;
+        opacity: 0.8;
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        border-bottom: 1px solid #d1d2d6;
+
+        height: 38px;
+        padding: 0 20px;
+        @include abstracts.screen(lg) {
+            height: 48px;
+        }
+
+        @include abstracts.screen(sm) {
+            margin: 10px 20px 0;
+            padding: 0 14px;
+            border: 1px solid;
+            border-radius: 8px;
+
+        }
+        &-input {
+            flex-grow: 1;
+            font-size: 1.6rem;
+            height: 100%;
+        }
+
+        &-icon {
+            width: 16px;
+            margin-left: 10px;
+        }
+    }
+
+    &__options-list{
+        flex: 1;
+        margin-top: 8px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    &__option {
+        padding: 8px 20px;  
+        font-size: 1.4rem;
+
+        @include abstracts.screen(lg) {
+            padding: 18px 20px;  
+            font-size: 1.6rem;
+        }
+
+        &--current {
+            background-color:  rgba($color: #FFB700, $alpha: 0.7);
+            font-weight: 500;
+        }
+
+        &:not(&--current):hover {
+            background-color: var(--modal-select-hover-bg);
+            cursor: pointer;
+        }
+    }
+
+    &__text-area {
+        padding: 12px;
+        height: 120px;
+        &-input {
+            resize: none;
+            font-size: 1.8rem;
+            width: 100%;
+            height: 100%;
+                
+            &::placeholder {
+                color: #D2D1D6;
+            }
+        }
+    }
+
+
+    &__error {
+        text-align: left;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #ed4337;
+        display: none;
+
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+    }
+
+    &__input {
+        flex: 1;
+        height: 100%;
+        font-size: 1.8rem;
+        width: 100%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+        }
+
+        &::placeholder {
+            color: #D2D1D6;
+        }
+
+        &-icon {
+            margin-left: 12px;
+            width: 20px;
+            &--error {
+                display: none;
+                animation: shake 0.3s;
+            }
+        }
+
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+
+        @include abstracts.screen(md) {
+            column-gap: 20px;
+        }
+
+        @include abstracts.screen(sm) {
+            &--sm-break {
+                flex-direction: column;
+            }
+        }
+
+        > * {
+            flex-grow: 1;
+        }
+    }
+
+    &__pull-right {
+        margin-left: auto;
+        text-align: right;
+    }
+
+    &__input,  &__label-checkbox {
+        font-weight: 500;
+        line-height: 1.444; /* 144.444% */
+    }
+
+    &__label-checkbox {
+        margin-left: 29px;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        user-select: none;
+        color: #9E9DA8;
+        font-size: 1.5rem;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            left: -29px;
+            transition: rotate 0.1s;
+        }
+        &::before {
+            width: 19px;
+            height: 19px;
+            border-radius: 5px;
+            border: 1.5px solid #9E9DA8;
+            transition: all 0.1s;
+        }
+       
+    }
+
+    &__label-checkbox:has(:checked) {
+        &::before {
+            border-color: #FFB700;
+            background-color: #FFB700;
+            
+        }
+
+        &::after {
+            width: 15px;
+            height: 8px;
+            border: 3px solid;
+            border-color: transparent transparent #fff #fff;
+            rotate: -45deg;
+            left: -27px;
+            top: 5px;
+        }
+    }
+
+    &__label{
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.4545; /* 145.455% */
+
+        &--small {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1.43; /* 142.857% */
+            margin-bottom: 10px;
+        }
+    }
+
+    &__select-wrap {
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        height: 45px;
+        width: 100%;
+        border: 1px solid #D2D1D6;
+    }
+
+    &__select, &__tag {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.43; /* 142.857% */
+    }
+
+    &__select {
+        width: var(--width, 108px);
+        height: calc(100% - 10px);
+        min-width: 80px;
+        padding: 0 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-icon {
+            width: 14px;
+        }
+        cursor: pointer;
+
+        @include abstracts.screen(xl) {
+            flex: 1;
+        }
+        
+    }
+    &__select + &__select {
+        border-left: 1px solid #D2D1D6;
+    }
+
+    &__tags {
+        display: flex;
+        gap: 10px 20px;
+        flex-wrap: wrap;
+    }
+
+    &__tag {
+        padding: 6px 12px;
+        border-radius: 6px;
+        color:#9E9DA8;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--text-color);
+        }
+    }
+
+    &__control {
+        display: flex;
+        align-items: center;
+    }
+
+
+}

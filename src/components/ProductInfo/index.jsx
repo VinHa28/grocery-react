@@ -1,5 +1,9 @@
 import React from 'react'
 import './ProductInfo.scss'
+import { FormLabel, FormSelect } from '../Form'
+import FormSelectGroup from '../Form/FormSelectGroup'
+import FormTag from '../Form/FormTag'
+
 export default function ProductInfo() {
     return (
         <section className="product-info">
@@ -10,23 +14,19 @@ export default function ProductInfo() {
                         <img src="./src/assets/icons/star.svg" alt="" className="product-property__icon" />
                         <h4 className="product-property__title">(3.5) 1100 reviews</h4>
                     </div>
-                    <label htmlFor="" className="form__label product-info__label">Size/Weight</label>
-                    <div className="form__select-wrap">
-                        <div className="form__select" style={{'--width': '140px;'}}>
-                            500g
-                            <img src="./src/assets/icons/arrow-down.svg" alt="icon" className="icon form__select-icon" />
-                        </div>
-                        <div className="form__select">
-                            Gram
-                            <img src="./src/assets/icons/arrow-down.svg" alt="icon" className="icon form__select-icon" />
-                        </div>
-                    </div>
+                    <FormLabel className="form__label product-info__label" label={'Size/Weight'} />
+                    <FormSelectGroup>
+                        <FormSelect style={{ '--width': '140px', }} defaultValue='500' />
+                        <FormSelect defaultValue='Gram' />
+                    </FormSelectGroup>
 
-                    <div className="form__tags product-info__tags">
+                    {/* <div className="form__tags product-info__tags">
                         <button className="form__tag product-info__tag">Small</button>
                         <button className="form__tag product-info__tag">Medium</button>
                         <button className="form__tag product-info__tag">Large</button>
-                    </div>
+                    </div> */}
+
+                    <FormTag listTags={['Small', 'Medium', 'Large']} className='product-info__tags' tagClassName='product-info__tag' />
                 </div>
                 <div className="col-7 col-xl-12">
                     <div className="product-properties">

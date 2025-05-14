@@ -1,8 +1,10 @@
 import React from 'react'
 import './Form.scss'
 
-export default function FormGroup() {
+export default function FormGroup({ children, className = '' }) {
   return (
-    <div>FormGroup</div>
+    <div className={`form__group ${className}`}>
+      {children}
+    </div>
   )
 }

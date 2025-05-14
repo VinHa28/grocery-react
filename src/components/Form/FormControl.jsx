@@ -1,8 +1,10 @@
 import React from 'react'
 import './Form.scss'
 
-export default function FormControl() {
+export default function FormControl({children, className=''}) {
   return (
-    <div>FormControl</div>
+    <div className={`form__control ${classsName}`}>
+      {children}
+    </div>
   )
 }

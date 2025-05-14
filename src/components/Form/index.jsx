@@ -5,3 +5,6 @@ export { default as FormControl } from './FormControl';
 export { default as FormTextArea } from './FormTextArea';
 export { default as FormSelect } from './FormSelect';
 export { default as FormCheckbox } from './FormCheckbox';
+export { default as FormLabel } from './FormLabel';
+export { default as Form } from './Form';
+import { default as FormSelectGroup } from './FormSelectGroup';

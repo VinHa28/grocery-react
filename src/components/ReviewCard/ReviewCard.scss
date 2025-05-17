@@ -1,0 +1,89 @@
+@use "../../scss/abstracts";
+.review-card {
+    border-radius: 16px;
+    background-color: var(--review-card-bg); 
+    height: 100%;
+
+    padding: 30px;
+
+    @include abstracts.screen(xl) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    @include abstracts.screen(md) {
+        display: block;
+        padding: 20px;
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+
+        @include abstracts.screen(xl) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include abstracts.screen(md) {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+    }
+
+    &__avt {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    &__title{
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.4545; /* 145.455% */
+        
+        @include abstracts.screen(xl) {
+            font-size: 1.8rem;
+            text-align: center;
+
+        }
+        @include abstracts.screen(md) {
+            text-align: left;
+        }
+
+        &--smaller {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__desc {
+        margin-top: 10px;
+        line-height: 1.5; /* 150% */
+    }
+
+    &__rating {
+        margin-top: 20px;
+
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+
+        @include abstracts.screen(xl) {
+            margin-top: 18px;
+            flex-direction: column;
+            row-gap: 8px;
+        }
+
+        @include abstracts.screen(md) {
+            flex-direction: row;
+        }
+    }
+
+    &__stars {
+        display: flex;
+        gap: 14px;
+    }
+}

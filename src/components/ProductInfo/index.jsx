@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProductInfo.scss'
 import { FormLabel, FormSelect } from '../Form'
 import FormSelectGroup from '../Form/FormSelectGroup'
 import FormTag from '../Form/FormTag'
-
+import LikeButton from '../Button/LikeButton'
 export default function ProductInfo() {
+    const [unitOfMeasure, setUnitOfMeasure] = useState('Gram')
+    const [WeightOptions, setWeighOptions] = useState([500, 600, 700, 800]);
     return (
         <section className="product-info">
             <h1 className="product-info__heading">Coffee Beans - Espresso Arabica and Robusta Beans</h1>
@@ -16,16 +18,9 @@ export default function ProductInfo() {
                     </div>
                     <FormLabel className="form__label product-info__label" label={'Size/Weight'} />
                     <FormSelectGroup>
-                        <FormSelect style={{ '--width': '140px', }} defaultValue='500' />
-                        <FormSelect defaultValue='Gram' />
+                        <FormSelect options={[500, 600, 700]} style={{ '--width': '140px', }} defaultValue='500' />
+                        <FormSelect defaultValue='Gram' options={['Gram', 'Kilogram']} />
                     </FormSelectGroup>
-
-                    {/* <div className="form__tags product-info__tags">
-                        <button className="form__tag product-info__tag">Small</button>
-                        <button className="form__tag product-info__tag">Medium</button>
-                        <button className="form__tag product-info__tag">Large</button>
-                    </div> */}
-
                     <FormTag listTags={['Small', 'Medium', 'Large']} className='product-info__tags' tagClassName='product-info__tag' />
                 </div>
                 <div className="col-7 col-xl-12">
@@ -61,10 +56,7 @@ export default function ProductInfo() {
                             </p>
                             <div className="product-info__cart-row">
                                 <button className="btn btn--primary product-info__cart-btn">Add to card</button>
-                                <button className="like-btn product-info__like-btn">
-                                    <img src="./src/assets/icons/heart.svg" alt="icon" className="like-btn__icon icon" />
-                                    <img src="./src/assets/icons/red-heart.svg" alt="icon" className="like-btn__icon--liked" />
-                                </button>
+                                <LikeButton className='product-info__like-btn' liked={true}/>
                             </div>
                         </div>
                     </div>

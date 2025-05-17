@@ -2,7 +2,7 @@
 
 .form {
 
-    &:has(:invalid) &__submit-btn{
+    &:has(:invalid) &__submit-btn {
         opacity: 0.5;
         pointer-events: none;
     }
@@ -11,6 +11,7 @@
         position: relative;
         margin-top: 30px;
         width: 100%;
+
         @include abstracts.screen(md) {
             margin-top: 20px;
         }
@@ -27,28 +28,55 @@
             display: none;
         }
 
-        .form__error, .form__input-icon--error {
+        .form__error,
+        .form__input-icon--error {
             display: block;
         }
     }
+    
 
-    &__text-input, &__text-area {
+    &__text-input,
+    &__text-area {
         display: flex;
         align-items: center;
         border-radius: 10px;
         border: 1px solid #D2D1D6;
+
         &:focus-within {
             border-color: #77DAE6;
         }
     }
-    
-    &__text-input{
+
+    &__text-input {
         height: 48px;
         padding: 0 12px;
         position: relative;
     }
 
-    &__select-dialog{
+    &__select-options {
+        position: absolute;
+        top: calc(100% + 10px);
+        background: #fff;
+        left: 0px;
+        width: 95%;
+        border-radius: 4px;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    &__select-option {
+        padding: 5px 14px;
+
+        &:not(&--current):hover {
+            background-color: rgba($color: #000000, $alpha: 0.1);
+        }
+
+        &--current{
+            background-color: #FFB700;
+        }
+    }
+
+    &__select-dialog {
         position: absolute;
         bottom: 52px;
         left: 10px;
@@ -61,12 +89,12 @@
         padding-bottom: 10px;
         box-shadow: 0 0 5px var(--modal-shadow);
         z-index: 1;
-        
+
         opacity: 0;
         visibility: hidden;
         translate: 0 8px;
         transition: 0.1s;
-        
+
         @include abstracts.screen(sm) {
             position: fixed;
             max-width: initial;
@@ -75,6 +103,7 @@
             border-radius: 0;
             padding: 18px;
         }
+
         &.show {
             opacity: 1;
             visibility: visible;
@@ -107,6 +136,7 @@
 
         height: 38px;
         padding: 0 20px;
+
         @include abstracts.screen(lg) {
             height: 48px;
         }
@@ -118,6 +148,7 @@
             border-radius: 8px;
 
         }
+
         &-input {
             flex-grow: 1;
             font-size: 1.6rem;
@@ -130,7 +161,7 @@
         }
     }
 
-    &__options-list{
+    &__options-list {
         flex: 1;
         margin-top: 8px;
         overflow-y: auto;
@@ -138,16 +169,16 @@
     }
 
     &__option {
-        padding: 8px 20px;  
+        padding: 8px 20px;
         font-size: 1.4rem;
-
+        
         @include abstracts.screen(lg) {
-            padding: 18px 20px;  
+            padding: 18px 20px;
             font-size: 1.6rem;
         }
 
         &--current {
-            background-color:  rgba($color: #FFB700, $alpha: 0.7);
+            background-color: rgba($color: #FFB700, $alpha: 0.7);
             font-weight: 500;
         }
 
@@ -157,15 +188,24 @@
         }
     }
 
+    &__select-no-option {
+        padding: 8px;
+        width: 100%;
+        font-size: 1.4rem;
+        font-style: italic;
+        text-align: center;
+    }
+
     &__text-area {
         padding: 12px;
         height: 120px;
+
         &-input {
             resize: none;
             font-size: 1.8rem;
             width: 100%;
             height: 100%;
-                
+
             &::placeholder {
                 color: #D2D1D6;
             }
@@ -202,6 +242,7 @@
         &-icon {
             margin-left: 12px;
             width: 20px;
+
             &--error {
                 display: none;
                 animation: shake 0.3s;
@@ -225,7 +266,7 @@
             }
         }
 
-        > * {
+        >* {
             flex-grow: 1;
         }
     }
@@ -235,9 +276,11 @@
         text-align: right;
     }
 
-    &__input,  &__label-checkbox {
+    &__input,
+    &__label-checkbox {
         font-weight: 500;
-        line-height: 1.444; /* 144.444% */
+        line-height: 1.444;
+        /* 144.444% */
     }
 
     &__label-checkbox {
@@ -254,12 +297,14 @@
             font-size: 1.4rem;
         }
 
-        &::before, &::after {
+        &::before,
+        &::after {
             content: "";
             position: absolute;
             left: -29px;
             transition: rotate 0.1s;
         }
+
         &::before {
             width: 19px;
             height: 19px;
@@ -267,14 +312,14 @@
             border: 1.5px solid #9E9DA8;
             transition: all 0.1s;
         }
-       
+
     }
 
     &__label-checkbox:has(:checked) {
         &::before {
             border-color: #FFB700;
             background-color: #FFB700;
-            
+
         }
 
         &::after {
@@ -288,16 +333,18 @@
         }
     }
 
-    &__label{
+    &__label {
         font-size: 2.2rem;
         font-weight: 500;
-        line-height: 1.4545; /* 145.455% */
+        line-height: 1.4545;
+        /* 145.455% */
 
         &--small {
             display: block;
             font-size: 1.4rem;
             font-weight: 500;
-            line-height: 1.43; /* 142.857% */
+            line-height: 1.43;
+            /* 142.857% */
             margin-bottom: 10px;
         }
     }
@@ -311,11 +358,13 @@
         border: 1px solid #D2D1D6;
     }
 
-    &__select, &__tag {
+    &__select,
+    &__tag {
         display: block;
         font-size: 1.4rem;
         font-weight: 500;
-        line-height: 1.43; /* 142.857% */
+        line-height: 1.43;
+        /* 142.857% */
     }
 
     &__select {
@@ -327,6 +376,7 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
+        position: relative;
 
         &-icon {
             width: 14px;
@@ -335,9 +385,10 @@
         @include abstracts.screen(xl) {
             flex: 1;
         }
-        
+
     }
-    &__select + &__select {
+
+    &__select+&__select {
         border-left: 1px solid #D2D1D6;
     }
 
@@ -350,10 +401,10 @@
     &__tag {
         padding: 6px 12px;
         border-radius: 6px;
-        color:#9E9DA8;
+        color: #9E9DA8;
         cursor: pointer;
 
-        &:hover {
+        &:hover, &--active {
             color: var(--text-color);
         }
     }

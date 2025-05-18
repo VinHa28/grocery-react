@@ -4,17 +4,21 @@ import { FormLabel, FormSelect } from '../Form'
 import FormSelectGroup from '../Form/FormSelectGroup'
 import FormTag from '../Form/FormTag'
 import LikeButton from '../Button/LikeButton'
-export default function ProductInfo() {
+import Button from '../Button'
+export default function ProductInfo({
+    product={},
+    className=''
+}) {
     const [unitOfMeasure, setUnitOfMeasure] = useState('Gram')
     const [WeightOptions, setWeighOptions] = useState([500, 600, 700, 800]);
     return (
-        <section className="product-info">
-            <h1 className="product-info__heading">Coffee Beans - Espresso Arabica and Robusta Beans</h1>
+        <section className={`product-info ${className}`}>
+            <h1 className="product-info__heading">{product?.name}</h1>
             <div className="product-info__row row">
                 <div className="col-5 col-xl-12">
                     <div className="product-property">
                         <img src="./src/assets/icons/star.svg" alt="" className="product-property__icon" />
-                        <h4 className="product-property__title">(3.5) 1100 reviews</h4>
+                        <h4 className="product-property__title">{product?.rating} ({product?.reviews.length} reviews) </h4>
                     </div>
                     <FormLabel className="form__label product-info__label" label={'Size/Weight'} />
                     <FormSelectGroup>
@@ -55,7 +59,7 @@ export default function ProductInfo() {
                                 $540.00
                             </p>
                             <div className="product-info__cart-row">
-                                <button className="btn btn--primary product-info__cart-btn">Add to card</button>
+                                <Button className="btn btn--primary product-info__cart-btn" content='Add to card'></Button>
                                 <LikeButton className='product-info__like-btn' liked={true}/>
                             </div>
                         </div>

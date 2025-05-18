@@ -13,31 +13,24 @@ export default function ReviewCard({
         const fullStars = Math.floor(rating);
         const hasHalfStar = rating % 1 >= 0.5;
         const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-
-        // Full stars
         for (let i = 0; i < fullStars; i++) {
             stars.push(<img key={`full-${i}`} src="./src/assets/icons/star.svg" alt="" className="review-card__star" />);
         }
-
-        // Half star if needed
         if (hasHalfStar) {
             stars.push(<img key="half" src="./src/assets/icons/star-half.svg" alt="" className="review-card__star" />);
         }
-
-        // Empty stars
         for (let i = 0; i < emptyStars; i++) {
             stars.push(<img key={`empty-${i}`} src="./src/assets/icons/star-blank.svg" alt="" className="review-card__star" />);
         }
-
         return stars;
     };
     return (
         <div className={`review-card ${className}`}>
             <div className='review-card__content'>
-                <img src={avatarSrc} alt={reviewerName} class="review-card__avt" />
-                <div class="review-card__info">
-                    <h4 class="review-card__title">{reviewerName}</h4>
-                    <p class="review-card__desc">{content}</p>
+                <img src={avatarSrc} alt={reviewerName} className="review-card__avt" />
+                <div className="review-card__info">
+                    <h4 className="review-card__title">{reviewerName}</h4>
+                    <p className="review-card__desc">{content}</p>
                 </div>
             </div>
             <div className="review-card__rating">
@@ -46,7 +39,7 @@ export default function ReviewCard({
                 </div>
                 <span
                     className="review-card__title review-card__title--smaller">
-                    ({rating}) Review
+                    ({rating} )<img src="./src/assets/icons/star.svg" alt="" className="review-card__star" />
                 </span>
             </div>
         </div>

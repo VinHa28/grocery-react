@@ -1,6 +1,7 @@
 import React from 'react'
 import './ProductCard.scss'
 import { Link } from 'react-router-dom'
+import LikeButton from '../Button/LikeButton'
 
 export default function ProductCard({
     img,
@@ -17,14 +18,15 @@ export default function ProductCard({
                 <Link to="/detail">
                     <img src={img} alt="" className="product-card__thumb" />
                 </Link>
-                <button className="like-btn like-btn--liked product-card__like-btn">
+                {/* <button className="like-btn like-btn--liked product-card__like-btn">
                     {
                         isFavored ?
                             <img src="./src/assets/icons/red-heart.svg" alt="icon" className="like-btn__icon--liked" /> :
                             <img src="./src/assets/icons/heart.svg" alt="icon" className="like-btn__icon icon" />
                     }
 
-                </button>
+                </button> */}
+                <LikeButton className='product-card__like-btn' liked={isFavored}/>
             </div>
             <div className="product-card__info">
                 <h3 className="product-card__title">

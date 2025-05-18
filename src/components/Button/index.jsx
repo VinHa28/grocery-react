@@ -8,6 +8,6 @@ export default function Button(
     }
 ) {
   return (
-    <div className={className}>{content}</div>
+    <button className={`btn ${className}`}>{content}</button>
   )
 }

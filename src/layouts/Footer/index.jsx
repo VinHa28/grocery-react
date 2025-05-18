@@ -1,6 +1,7 @@
 import React from 'react'
 import './Footer.scss'
 import Logo from '../../components/Logo'
+import Button from '../../components/Button'
 
 export default function Footer() {
   return (
@@ -22,7 +23,7 @@ export default function Footer() {
             <p className="footer__desc">Receive product news and updates.</p>
             <form action="" className="footer__form">
               <input type="email" name="" id="" className="footer__input" placeholder="Email address" />
-              <button className="btn btn--primary footer__btn">SEND</button>
+              <Button className='btn--primary footer__btn' content='SEND'/>
             </form>
           </div>
           {/* Footer Column 2 */}

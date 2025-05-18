@@ -137,6 +137,48 @@ const listCategories = [
         desc: 'Lavazza top class whole bean coffee blend'
     },
 ]
+
+const cartList = [
+    {
+        product: {
+            id: 1,
+            name: 'Buon Ma Thuot Blend',
+            img: './src/assets/img/product/product-1.png',
+            price: 500,
+            inStock: true,
+            isFavored: false,
+            brand: 'BMT Coffee',
+            shortDesc: 'Vietnam’s coffee heritage',
+        },
+        quantity: 5,
+    },
+    {
+        product: {
+            id: 3,
+            name: 'Vinacafe Instant Mix',
+            img: './src/assets/img/product/product-2.png',
+            price: 106,
+            inStock: true,
+            isFavored: false,
+            brand: 'Vinacafe',
+            shortDesc: 'Sweet and creamy taste',
+        },
+        quantity: 1,
+    },
+    {
+        product: {
+            id: 5,
+            name: 'Highlands Coffee Roast',
+            img: './src/assets/img/product/product-4.png',
+            price:  38.65,
+            inStock: true,
+            isFavored: true,
+            brand: 'Highlands',
+            shortDesc: 'Bold roast, deep flavor',
+        },
+        quantity: 7,
+    }
+]
 export const dataSrc = {
     product: {
         id: '',
@@ -208,4 +250,5 @@ export const dataSrc = {
     },
     listProducts,
     listCategories,
+    cartList,
 }

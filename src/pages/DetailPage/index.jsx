@@ -5,10 +5,10 @@ import SearchBar from '../../components/SearchBar'
 import ProductPreview from '../../components/ProductPreview';
 import ProductInfo from '../../components/ProductInfo';
 import Tab from '../../components/Tab';
-import TextContent from '../../TextContent';
 import { dataSrc } from '../../data/DataSource';
 import ReviewCard from '../../components/ReviewCard';
 import ProductCard from '../../components/ProductCard';
+import TextContent from '../../components/TextContent';
 
 const product = dataSrc.product;
 

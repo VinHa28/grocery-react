@@ -3,11 +3,14 @@ import './Button.scss'
 
 export default function Button(
     {
-        content = 'Button',
+      children,
         className = '',
+        onClick = () => {},
     }
 ) {
   return (
-    <button className={`btn ${className}`}>{content}</button>
+    <button className={`btn ${className}`} onClick={onClick}>
+      {children }
+    </button>
   )
 }

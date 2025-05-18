@@ -59,7 +59,7 @@ export default function ProductInfo({
                                 $540.00
                             </p>
                             <div className="product-info__cart-row">
-                                <Button className="btn btn--primary product-info__cart-btn" content='Add to card'></Button>
+                                <Button className="btn btn--primary product-info__cart-btn" >Add to card</Button>
                                 <LikeButton className='product-info__like-btn' liked={true}/>
                             </div>
                         </div>

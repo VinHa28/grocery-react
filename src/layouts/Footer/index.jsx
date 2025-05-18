@@ -23,7 +23,7 @@ export default function Footer() {
             <p className="footer__desc">Receive product news and updates.</p>
             <form action="" className="footer__form">
               <input type="email" name="" id="" className="footer__input" placeholder="Email address" />
-              <Button className='btn--primary footer__btn' content='SEND'/>
+              <Button className='btn--primary footer__btn'>SEND</Button>
             </form>
           </div>
           {/* Footer Column 2 */}

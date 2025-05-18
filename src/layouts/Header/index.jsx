@@ -72,10 +72,10 @@ export default function Header() {
             </a>
 
             <a href="./sign-in.html" >
-              <Button className="btn btn--text d-md-none" content='Sign In' />
+              <Button className="btn btn--text d-md-none">Sign In</Button>
             </a>
             <a href="./sign-up.html">
-              <Button className="btn btn--primary top-action__sign-up" content='Sign Up' />
+              <Button className="btn btn--primary top-action__sign-up">Sign Up</Button>
             </a>
           </div>
         </div>

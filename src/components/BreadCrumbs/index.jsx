@@ -3,18 +3,15 @@ import './BreadCrumbs.scss'
 import { Link, useLocation } from 'react-router-dom'
 import { capitalizeFirstLetter } from '../../utils/utils';
 
-export default function BreadCrumbs() {
-  const location = useLocation();
-  // const pathnames = location.pathname.split("/").filter((x) => x);
-
-  const pathnames = [
-    'departments',
+export default function BreadCrumbs({
+  className ='',
+  pathnames = ['departments',
     'coffee',
-    'coffee beans'
-  ]
-  pathnames.map(name => console.log(name))
+    'coffee beans']
+}) {
+
   return (
-    <ul className="breadcrumbs">
+    <ul className={`breadcrumbs ${className}`}>
       {pathnames.map((name, index) => {
         const routeTo = '/' + pathnames.slice(0, index + 1).join('/');
         const isLast = index === pathnames.length - 1;

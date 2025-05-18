@@ -1,0 +1,32 @@
+@use "../../scss/abstracts";
+
+.gift-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    &__icon-wrap {
+        width: 76px;
+        height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border-radius: 14px;
+        background: var(--gift-item-icon-bg);
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.44;
+        /* 144.444% */
+    }
+
+    &__desc {
+        margin-top: 10px;
+        font-size: 1.4rem;
+        line-height: 1.43;
+        /* 142.857% */
+    }
+}

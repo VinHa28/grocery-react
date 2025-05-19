@@ -179,6 +179,19 @@ const cartList = [
         quantity: 7,
     }
 ]
+
+const listAddress = [
+    {
+        receiver: 'Ha Van Vinh',
+        address: 'FPT University, Hoa Lac High-Tech Park, Thach That, Hanoi, Vietnam.',
+        selected: true,
+    },
+    {
+        receiver: 'Vinh Ha Van',
+        address: 'Xuan Giang Commune, Soc Son District, Hanoi, Vietnam',
+        selected: false,
+    }
+]
 export const dataSrc = {
     product: {
         id: '',
@@ -251,4 +264,5 @@ export const dataSrc = {
     listProducts,
     listCategories,
     cartList,
+    listAddress,
 }

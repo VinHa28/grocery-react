@@ -1,5 +1,5 @@
 import React from 'react'
-import './CartPage.scss'
+import './CheckoutPayment.scss'
 import SearchBar from '../../components/SearchBar'
 import BreadCrumbs from '../../components/BreadCrumbs'
 import CartItem from '../../components/CartItem'
@@ -101,7 +101,7 @@ export default function CartPage() {
                                     <span>${(totalPrice + shipping).toFixed(2)}</span>
                                 </div>
 
-                                <Link to="./checkout">
+                                <Link to="/checkout">
                                     <Button className='btn--primary btn--rounded cart-info__btn'>Continue to checkout</Button>
                                 </Link>
                             </div>

@@ -15,18 +15,20 @@ export default function FormInput({
   errMessage,
   className = '',
   readOnly = false,
+  labelClass ='',
+  inputClass ='',
   ...props
 }) {
   return (
     <FormGroup className={className}>
       {label && (
-        <FormLabel htmlFor={id} label={label} />
+        <FormLabel htmlFor={id} label={label} className={labelClass}/>
       )}
       <div className='form__text-input'>
         <input id={id}
           name={name}
           type={type}
-          className='form__input'
+          className={`form__input ${inputClass}`}
           placeholder={placeholder}
           required={require}
           pattern={pattern}
@@ -34,9 +36,9 @@ export default function FormInput({
           readOnly={readOnly}
           {...props}
         />
-        <img src="./src/assets/icons/form__error.svg" 
-        alt="" 
-        className='form__input-icon form__input-icon--error'/>
+        <img src="./src/assets/icons/form__error.svg"
+          alt=""
+          className='form__input-icon form__input-icon--error' />
       </div>
       {errMessage && <p className='form__error'>{errMessage}</p>}
     </FormGroup>

@@ -7,6 +7,7 @@ import MainLayout from './layouts/MainLayout';
 import ScrollToTop from './components/ScrollToTop';
 import CheckoutPage from './pages/CheckoutPayment/CheckoutPage';
 import CartPage from './pages/CheckoutPayment/CartPage';
+import PaymentPage from './pages/CheckoutPayment/PaymentPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/detail' element={<DetailPage />} />
           <Route path='/cart' element={<CartPage />} />
           <Route path='/checkout' element={<CheckoutPage />} />
+          <Route path='/payment' element={<PaymentPage />} />
         </Routes>
       </MainLayout>
     </>

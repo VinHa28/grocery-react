@@ -33,6 +33,7 @@ const listProducts = [
         rating: 4.5,
         brand: 'Lavazza',
         isFavored: true,
+        price: 48.00,
     },
     {
         id: '2',
@@ -42,6 +43,7 @@ const listProducts = [
         rating: 4.2,
         brand: 'Nescafe',
         isFavored: false,
+        price: 48.00,
     },
     {
         id: '3',
@@ -51,6 +53,7 @@ const listProducts = [
         rating: 4.7,
         brand: 'Starbucks',
         isFavored: true,
+        price: 49.00,
     },
     {
         id: '4',
@@ -60,6 +63,7 @@ const listProducts = [
         rating: 4.3,
         brand: 'Trung Nguyen',
         isFavored: false,
+        price: 58.00,
     },
     {
         id: '5',
@@ -69,6 +73,7 @@ const listProducts = [
         rating: 4.6,
         brand: 'Illy',
         isFavored: true,
+        price: 78.00,
     },
     {
         id: '6',
@@ -78,6 +83,7 @@ const listProducts = [
         rating: 4.1,
         brand: 'Tchibo',
         isFavored: false,
+        price: 74.00,
     },
     {
         id: '7',
@@ -87,6 +93,7 @@ const listProducts = [
         rating: 4.4,
         brand: 'Dalat Coffee',
         isFavored: true,
+        price: 43.00,
     },
     {
         id: '8',
@@ -96,6 +103,7 @@ const listProducts = [
         rating: 4.0,
         brand: 'Highlands',
         isFavored: false,
+        price: 58.00,
     },
     {
         id: '9',
@@ -105,6 +113,7 @@ const listProducts = [
         rating: 4.3,
         brand: 'BMT Coffee',
         isFavored: true,
+        price: 47.00,
     },
     {
         id: '10',
@@ -114,6 +123,7 @@ const listProducts = [
         rating: 4.2,
         brand: 'Vinacafe',
         isFavored: false,
+        price: 58.00,
     }
 ];
 
@@ -170,7 +180,7 @@ const cartList = [
             id: 5,
             name: 'Highlands Coffee Roast',
             img: './src/assets/img/product/product-4.png',
-            price:  38.65,
+            price: 38.65,
             inStock: true,
             isFavored: true,
             brand: 'Highlands',
@@ -192,23 +202,22 @@ const listAddress = [
         selected: false,
     }
 ]
-export const dataSrc = {
-    product: {
-        id: '',
-        category: '',
-        name: 'Coffee Beans - Espresso Arabica and Robusta Beans',
-        rating,
-        images: [
-            './src/assets/img/product/product-1.png',
-            './src/assets/img/product/product-2.png',
-            './src/assets/img/product/product-3.png',
-            './src/assets/img/product/product-4.png',
-        ],
-        price: 500,
-        discount: 0.1,
-        isFavored: true,
-        reviews,
-        description: `
+const product = {
+    id: '',
+    category: '',
+    name: 'Coffee Beans - Espresso Arabica and Robusta Beans',
+    rating,
+    images: [
+        './src/assets/img/product/product-1.png',
+        './src/assets/img/product/product-2.png',
+        './src/assets/img/product/product-3.png',
+        './src/assets/img/product/product-4.png',
+    ],
+    price: 500,
+    discount: 0.1,
+    isFavored: true,
+    reviews,
+    description: `
                 <h2>Lorem ipsum dolor sit amet.</h2>
                 <p>
                     <a href="#!">Lorem ipsum dolor sit amet</a> consectetur adipisicing elit.
@@ -260,9 +269,42 @@ export const dataSrc = {
                 </p>
                 `,
 
-    },
+}
+
+const user = {
+    firstName: 'Vinh',
+    lastName: 'Ha Van',
+    phoneNumber: '0981228204',
+    email: 'vinhhv28@gmail.com',
+    address: 'Soc Son District, Hanoi, Vietnam',
+    avatar: '../src/assets/img/avatar.JPG',
+    cards: [
+        {
+            id: 1,
+            type: 'FeatherCard',
+            number: '1234 4567 8901 2221',
+            cardHolder: 'Vinh Ha Van',
+            expired: '10/22',
+            bgColor: '#1E2E69',
+            img: '../src/assets/img/card/air-plane.svg',
+        },
+        {
+            id: 2,
+            type: 'FeatherCard',
+            number: '1234 4567 8901 2221',
+            cardHolder: 'Vinh Ha Van',
+            expired: '07/28',
+            bgColor: '#354151',
+            img: '../src/assets/img/card/leaf.svg',
+        }
+    ],
+    favoriteList: listProducts.filter((item) => item.id % 3 == 0),
+}
+export const dataSrc = {
+    product,
     listProducts,
     listCategories,
     cartList,
     listAddress,
+    user
 }

@@ -5,11 +5,14 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App'
 
 import "./scss/main.scss";
+import ThemeProvider from './context/ThemeContext';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </BrowserRouter>
   </StrictMode>,
 )

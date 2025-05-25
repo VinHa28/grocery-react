@@ -2,7 +2,6 @@
 
 // Buttons
 .btn {
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,5 +61,48 @@
 
     &__icon--liked {
         margin-top: 6px;
+    }
+}
+
+// Theme 
+.theme-btn {
+    user-select: none;
+    @include abstracts.screen(lg) {
+        margin-right: -18px;
+    }
+    
+    &__label {
+        max-width: 58px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: var(--theme-btn-bg);
+        border-radius: 999px;
+        padding: 4px 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 4px;
+            // right: 4px;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: var(--theme-btn-circle-color);
+            transform: var(--theme-btn-circle-pos);
+            transition: all 0.2s;
+        }
+    }
+    &__icon{
+        height: 20px;
+        filter: brightness(0) saturate(100%) invert(77%) sepia(49%) saturate(2986%) hue-rotate(358deg) brightness(100%) contrast(106%);
+        &--sun {
+            height: 18px;
+        }
     }
 }

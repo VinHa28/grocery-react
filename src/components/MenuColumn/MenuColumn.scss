@@ -1,0 +1,90 @@
+@use '../../scss/abstracts';
+
+.menu-column {
+  display: flex;
+  column-gap: 14px;
+
+  @include abstracts.screen(lg) {
+    margin-top: 10px;
+  }
+
+  +.menu-column {
+    margin-top: 30px;
+
+    // @include abstracts.screen(lg) {
+    //   margin-top: 10px;
+    // }
+  }
+
+  &__item {
+    &--active .sub-menu {
+      display: grid;
+    }
+  }
+
+  &__item--active>&__link,
+  &__item:hover>&__link {
+    color: #0071dc;
+    font-weight: 500;
+  }
+
+  &__icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__icon-shape {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  &__icon-cate {
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+
+    object-fit: contain;
+    width: 24px;
+    height: 24px;
+    filter: var(--cate-icon-color);
+  }
+
+  &__heading {
+    margin-top: 6px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    /* 150% */
+    @include abstracts.screen(lg) {
+      margin-bottom: 26px;
+    }
+  }
+
+  &__list {
+    margin-top: 19px;
+
+    @include abstracts.screen(lg) {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 7px 0;
+    font-size: 1.4rem;
+    line-height: 1.43;
+    /* 142.857% */
+  }
+
+  &__item:last-child a {
+    padding-bottom: 0;
+  }
+}

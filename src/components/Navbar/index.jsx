@@ -59,10 +59,12 @@ export default function Navbar({
                         <li
                             key={index} className="navbar__item "
                             onMouseEnter={(e) => {
-                                const leftPosition = e.currentTarget.getBoundingClientRect().left;
                                 const dropdownInner = e.currentTarget.querySelector('.dropdown__inner');
                                 if (dropdownInner) {
-                                    dropdownInner.style.setProperty('--arrow-left-pos', `${leftPosition}px`);
+                                    const itemLeft = e.currentTarget.getBoundingClientRect().left;
+                                    const dropdownLeft = dropdownInner.getBoundingClientRect().left;
+                                    const relativeLeft = itemLeft - dropdownLeft + (e.currentTarget.offsetWidth / 2);
+                                    dropdownInner.style.setProperty('--arrow-left-pos', `${relativeLeft}px`);
                                 }
                             }}
                         >

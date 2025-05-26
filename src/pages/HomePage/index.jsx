@@ -4,6 +4,7 @@ import Slideshow from '../../components/Slideshow'
 import CateItem from '../../components/CateItem'
 import ProductCard from '../../components/ProductCard'
 import { dataSrc } from '../../data/DataSource'
+import FilterForm from '../../components/FilterForm'
 
 export default function HomePage() {
   return (
@@ -30,12 +31,7 @@ export default function HomePage() {
           <section className='home__container'>
             <div className='home__row'>
               <h2 className='home__heading'>Total LavAzza 1320</h2>
-              <div className='filter-wrap'>
-                <div className="filter-btn">
-                  Filter
-                  <img src="./src/assets/icons/filter.svg" alt="icon" className="filter-btn__icon icon" />
-                </div>
-              </div>
+              <FilterForm/>
             </div>
             <ul className="row row-cols-5 row-cols-lg-2 row-cols-sm-1 home__list g-lg-3 g-md-2">
               {dataSrc.listProducts.map((product) => {

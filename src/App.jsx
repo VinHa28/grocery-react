@@ -1,5 +1,5 @@
-import { useState } from 'react'
-
+import React from 'react';
+import { useEffect, useState } from 'react'
 import HomePage from './pages/HomePage';
 import { Route, Routes } from 'react-router-dom';
 import DetailPage from './pages/DetailPage';
@@ -15,13 +15,10 @@ function App() {
   return (
     <>
       <ScrollToTop />
-
-       <Routes>
-        {/* Các route không dùng layout chính */}
+      <Routes>
         <Route path='/login' element={<LoginPage />} />
         <Route path='/signup' element={<LoginPage />} />
 
-        {/* Các route dùng chung layout */}
         <Route element={<MainLayout />}>
           <Route path='/' element={<HomePage />} />
           <Route path='/home' element={<HomePage />} />

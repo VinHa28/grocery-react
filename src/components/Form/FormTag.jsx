@@ -2,23 +2,26 @@ import React, { useState } from 'react'
 import './Form.scss'
 
 export default function FormTag({
-    className='',
-    listTags =[],
-    tagClassName ='',
+  className = '',
+  listTags = [],
+  tagClassName = '',
 }) {
   const [selectedTags, setSelectedTags] = useState([]);
-  
-  return (
-    <div className={`form__tags ${className}`}>
-        {listTags.map((tag) => (
-            <button 
-            className={`form__tag ${selectedTags.includes(tag) && 'form__tag--active'} ${tagClassName}`} 
-            key={tag}
-            onClick={() => setSelectedTags(...selectedTags, tag)}
-            >
-              {tag}
-              </button>
-        ))}
+    return (
+    <div className={`${className} form__tags`}>
+      {listTags.map((tag) => (
+        <div
+          className={`form__tag ${selectedTags.includes(tag) && 'form__tag--active'} ${tagClassName}`}
+          key={tag}
+          onClick={() => setSelectedTags(
+            selectedTags.includes(tag) ?
+              selectedTags.filter(t => t != tag) :
+              [...selectedTags, tag]
+          )}
+        >
+          {tag}
+        </div>
+      ))}
     </div>
   )
 }

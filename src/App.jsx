@@ -10,6 +10,7 @@ import CartPage from './pages/CheckoutPayment/CartPage';
 import PaymentPage from './pages/CheckoutPayment/PaymentPage';
 import ProfilePage from './pages/ProfilePage';
 import LoginPage from './pages/Auth/LoginPage';
+import FavoritePage from './pages/CheckoutPayment/FavoritePage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/checkout' element={<CheckoutPage />} />
           <Route path='/payment' element={<PaymentPage />} />
           <Route path='/profile' element={<ProfilePage />} />
+          <Route path='/favorite' element={<FavoritePage />}></Route>
         </Route>
       </Routes>
     </>

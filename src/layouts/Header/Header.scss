@@ -126,11 +126,11 @@
   }
 
   &__dropdown {
-    right: 0 !important;
-    width: min(300px, 100vw);
+    right: -8px !important;
     &-arrow {
-      right: 15px;
+      right: 8px;
       top: -14px;
+      z-index: 1;
     }
   }
 

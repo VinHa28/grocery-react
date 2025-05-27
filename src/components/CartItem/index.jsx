@@ -12,17 +12,20 @@ export default function CartItem({
   brand = '',
   initialQuantity = 1,
   img = '',
-
+  hasCheckBox = false,
 }) {
   const [quantity, setQuantity] = useState(initialQuantity);
   const [liked, setLiked] = useState(isFavored);
-
   const handleChangeLiked = () => {
     setLiked(!liked);
   }
-  console.log(liked)
   return (
     <article className="cart-item">
+      {hasCheckBox && <div className="cart-info__check-all">
+        <label className="address-card__checkbox">
+          <input type="checkbox" className="address-card__checkbox-input" checked/>
+        </label>
+      </div>}
       <Link to="/detail">
         <img src={img} alt="" className="cart-item__thumb" />
       </Link>
@@ -50,25 +53,48 @@ export default function CartItem({
                 <img src="./src/assets/icons/plus.svg" alt="" className="icon" />
               </button>
             </div>
+            {hasCheckBox && <div className="cart-item__control">
+              {!liked ? (
+                <Button liked={isFavored} className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
+                  <img src="./src/assets/icons/heart.svg" alt="" className="cart-item__btn-icon" />
+                  Save
+                </Button>) :
+                (<Button liked={isFavored} className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
+                  <img src="./src/assets/icons/red-heart.svg" alt="" className="cart-item__btn-icon--red" />
+                  Save
+                </Button>)}
+              <button className="cart-item__btn btn btn--text js-toggle" toggle-target="#delete-confirm">
+                <img src="./src/assets/icons/trash.svg" alt="" className="cart-item__btn-icon" />
+                Delete
+              </button>
+            </div>}
           </div>
         </div>
         <div className="cart-item__content-right">
-          <p className="cart-item__total">$47.00</p>
-          <div className="cart-item__control">
-            {!liked ? (
-              <Button liked={isFavored} className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
-                <img src="./src/assets/icons/heart.svg" alt="" className="cart-item__btn-icon" />
-                Save
-              </Button>) :
-              (<Button liked={isFavored} className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
-                <img src="./src/assets/icons/red-heart.svg" alt="" className="cart-item__btn-icon--red" />
-                Save
-              </Button>)}
-            <button className="cart-item__btn btn btn--text js-toggle" toggle-target="#delete-confirm">
-              <img src="./src/assets/icons/trash.svg" alt="" className="cart-item__btn-icon" />
-              Delete
-            </button>
-          </div>
+          <p className="cart-item__total">${price}</p>
+          {hasCheckBox ?
+            (<div className="cart-item__control">
+              <Link to='/checkout'></Link>
+              <Button className="btn--primary btn--rounded cart-item__btn">
+                Check Out
+              </Button>
+            </div>) :
+            <div className="cart-item__control">
+              {!liked ? (
+                <Button liked={isFavored} className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
+                  <img src="./src/assets/icons/heart.svg" alt="" className="cart-item__btn-icon" />
+                  Save
+                </Button>) :
+                (<Button liked={isFavored} className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
+                  <img src="./src/assets/icons/red-heart.svg" alt="" className="cart-item__btn-icon--red" />
+                  Save
+                </Button>)}
+              <button className="cart-item__btn btn btn--text js-toggle" toggle-target="#delete-confirm">
+                <img src="./src/assets/icons/trash.svg" alt="" className="cart-item__btn-icon" />
+                Delete
+              </button>
+            </div>}
+
         </div>
       </div>
     </article>

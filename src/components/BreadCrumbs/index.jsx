@@ -18,7 +18,8 @@ export default function BreadCrumbs({
         return (
           !isLast ? (
             <li key={routeTo}>
-              <Link to={routeTo} className="breadcrumbs__link">
+              {/* <Link to={routeTo} className="breadcrumbs__link">   */}
+              <Link to='#' className="breadcrumbs__link">
                 {capitalizeFirstLetter(name)}
                 <img src="./src/assets/icons/arrow-right.svg" alt="" />
               </Link>

@@ -15,14 +15,16 @@ export default function FormInput({
   errMessage,
   className = '',
   readOnly = false,
-  labelClass ='',
-  inputClass ='',
+  labelClass = '',
+  inputClass = '',
+  hasIcon = false,
+  icon = '',
   ...props
 }) {
   return (
     <FormGroup className={className}>
       {label && (
-        <FormLabel htmlFor={id} label={label} className={labelClass}/>
+        <FormLabel htmlFor={id} label={label} className={labelClass} />
       )}
       <div className='form__text-input'>
         <input id={id}
@@ -36,9 +38,11 @@ export default function FormInput({
           readOnly={readOnly}
           {...props}
         />
-        <img src="./src/assets/icons/form__error.svg"
+        <img src="../src/assets/icons/form__error.svg"
           alt=""
           className='form__input-icon form__input-icon--error' />
+
+        {hasIcon && <img src={icon} alt="" class="form__input-icon" />}
       </div>
       {errMessage && <p className='form__error'>{errMessage}</p>}
     </FormGroup>

@@ -6,7 +6,7 @@ export default function FormCheckbox(
   {
     id,
     name,
-    className='',
+    className = '',
     label,
     checked,
     onChange,
@@ -14,18 +14,17 @@ export default function FormCheckbox(
   }
 ) {
   return (
-    <FormGroup className={className}>
-      <label htmlFor={id} className='form__label-checkbox'>
-        <input 
+    <label htmlFor={id} className={`form__label-checkbox ${className}`}>
+      <input
         type='checkbox'
         id={id}
         name={name}
         checked={checked}
         onChange={onChange}
         {...props}
-        />
-        {label}
-      </label>
-    </FormGroup>
+        className='form__checkbox d-none'
+      />
+      {label}
+    </label>
   )
 }

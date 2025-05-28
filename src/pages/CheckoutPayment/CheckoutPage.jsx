@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './CheckoutPayment.scss'
 import SearchBar from '../../components/SearchBar'
 import BreadCrumbs from '../../components/BreadCrumbs'
@@ -7,16 +7,20 @@ import AddressCard from '../../components/AddressCard';
 import { dataSrc } from '../../data/DataSource';
 import CartItem from '../../components/CartItem';
 import { Link } from 'react-router-dom';
+import Modal from '../../commons/Modal';
+import ConfirmModal from '../../components/Modals/ConfirmModal';
+import NewAddressModal from '../../components/Modals/NewAddressModal';
 
 const pathnames = ['Home', 'Cart', 'Checkout'];
 
 const shipping = 10;
 
 const totalPrice = dataSrc.cartList.reduce((total, item) => {
-    return (total + item.product.price * item.quantity);
+  return (total + item.product.price * item.quantity);
 }, 0);
 
 export default function CheckoutPage() {
+  const [open, setOpen] = useState(false);
   return (
     <main className="cart-main">
       <div className="container">
@@ -49,7 +53,7 @@ export default function CheckoutPage() {
                         Where should we deliver your order?
                       </p>
                     </div>
-                    <Button className="user-address__btn btn--primary btn--rounded">
+                    <Button className="user-address__btn btn--primary btn--rounded" onClick={() => setOpen(true)}>
                       <img src="./src/assets/icons/plus.svg" alt="" className="user-address__btn-icon" />
                       Add a new address
                     </Button>
@@ -138,6 +142,8 @@ export default function CheckoutPage() {
           </div>
         </div>
       </div>
+
+      <NewAddressModal open={open} setOpen={setOpen}></NewAddressModal>
     </main >
   )
 }

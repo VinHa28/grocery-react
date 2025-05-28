@@ -6,34 +6,38 @@ import FormLabel from './FormLabel'
 export default function FormTextArea({
   id,
   name,
-  label, 
+  label,
   placeholder,
-  value,
+  defaultValue,
   required = false,
   readOnly = false,
   errorMessage,
-  className='',
+  className = '',
+  labelClass = '',
+  onChange = () => { },
   ...props
 }) {
   return (
     <FormGroup className={className}>
       {label && (
-        <FormLabel htmlFor={id} label={label}/>
+        <FormLabel className={labelClass} htmlFor={id} label={label} />
       )}
       <div className='form__text-area'>
         <textarea
-         name={name}
-         id={id}
-         className='form__text-area-input'
-         placeholder={placeholder}
-         required={required}
-         readOnly={readOnly}
-         {...props}
+          name={name}
+          id={id}
+          className='form__text-area-input'
+          placeholder={placeholder}
+          required={required}
+          readOnly={readOnly}
+          onChange={() => { }}
+          // value={defaultValue ? defaultValue : ''}
+          {...props}
         >
-          {value ? value : ''}
+          {defaultValue || ''}
         </textarea>
       </div>
-      {errorMessage &&  <p className='form__error'>{errorMessage}</p>}
+      {errorMessage && <p className='form__error'>{errorMessage}</p>}
     </FormGroup>
   )
 }

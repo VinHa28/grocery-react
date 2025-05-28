@@ -3,6 +3,7 @@ import './CartItem.scss'
 import LikeButton from '../Button/LikeButton';
 import Button from '../Button';
 import { Link } from 'react-router-dom';
+import ConfirmModal from '../Modals/ConfirmModal';
 
 export default function CartItem({
   title = '',
@@ -14,6 +15,7 @@ export default function CartItem({
   img = '',
   hasCheckBox = false,
 }) {
+  const [open, setOpen] = useState(false);
   const [quantity, setQuantity] = useState(initialQuantity);
   const [liked, setLiked] = useState(isFavored);
   const handleChangeLiked = () => {
@@ -23,7 +25,7 @@ export default function CartItem({
     <article className="cart-item">
       {hasCheckBox && <div className="cart-info__check-all">
         <label className="address-card__checkbox">
-          <input type="checkbox" className="address-card__checkbox-input" checked/>
+          <input type="checkbox" className="address-card__checkbox-input" checked />
         </label>
       </div>}
       <Link to="/detail">
@@ -46,57 +48,68 @@ export default function CartItem({
                 if (quantity > 1) setQuantity(quantity - 1)
                 else return;
               }}>
-                <img src="./src/assets/icons/minus.svg" alt="" className="icon" />
+                <img src="../src/assets/icons/minus.svg" alt="" className="icon" />
               </button>
               {quantity}
               <button className="cart-item__input-btn" onClick={() => setQuantity(quantity + 1)}>
-                <img src="./src/assets/icons/plus.svg" alt="" className="icon" />
+                <img src="../src/assets/icons/plus.svg" alt="" className="icon" />
               </button>
             </div>
+
             {hasCheckBox && <div className="cart-item__control">
-              {!liked ? (
-                <Button liked={isFavored} className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
-                  <img src="./src/assets/icons/heart.svg" alt="" className="cart-item__btn-icon" />
-                  Save
-                </Button>) :
-                (<Button liked={isFavored} className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
-                  <img src="./src/assets/icons/red-heart.svg" alt="" className="cart-item__btn-icon--red" />
-                  Save
-                </Button>)}
-              <button className="cart-item__btn btn btn--text js-toggle" toggle-target="#delete-confirm">
-                <img src="./src/assets/icons/trash.svg" alt="" className="cart-item__btn-icon" />
+              {
+                !liked ? (
+                  <Button className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
+                    <img src="../src/assets/icons/heart.svg" alt="" className="cart-item__btn-icon" />
+                    Save
+                  </Button>) :
+                  (<Button className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
+                    <img src="../src/assets/icons/red-heart.svg" alt="" className="cart-item__btn-icon--red" />
+                    Save
+                  </Button>)}
+              <Button className="cart-item__btn btn--text" onClick={() => setOpen(true)}>
+                <img src="../src/assets/icons/trash.svg" alt="" className="cart-item__btn-icon" />
                 Delete
-              </button>
-            </div>}
+              </Button>
+            </div>
+            }
+
           </div>
         </div>
         <div className="cart-item__content-right">
           <p className="cart-item__total">${price}</p>
-          {hasCheckBox ?
-            (<div className="cart-item__control">
-              <Link to='/checkout'></Link>
-              <Button className="btn--primary btn--rounded cart-item__btn">
-                Check Out
-              </Button>
-            </div>) :
-            <div className="cart-item__control">
-              {!liked ? (
-                <Button liked={isFavored} className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
-                  <img src="./src/assets/icons/heart.svg" alt="" className="cart-item__btn-icon" />
-                  Save
-                </Button>) :
-                (<Button liked={isFavored} className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
-                  <img src="./src/assets/icons/red-heart.svg" alt="" className="cart-item__btn-icon--red" />
-                  Save
-                </Button>)}
-              <button className="cart-item__btn btn btn--text js-toggle" toggle-target="#delete-confirm">
-                <img src="./src/assets/icons/trash.svg" alt="" className="cart-item__btn-icon" />
-                Delete
-              </button>
-            </div>}
+
+          {
+            hasCheckBox ?
+              <div className="cart-item__control">
+                <Link to='/checkout'></Link>
+                <Button className="btn--primary btn--rounded cart-item__btn">
+                  Check Out
+                </Button>
+              </div> :
+              <div className="cart-item__control">
+                {
+                  !liked ?
+                    <Button className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
+                      <img src="./src/assets/icons/heart.svg" alt="" className="cart-item__btn-icon" />
+                      Save
+                    </Button> :
+                    <Button className='cart-item__btn btn--text btn' onClick={handleChangeLiked}>
+                      <img src="./src/assets/icons/red-heart.svg" alt="" className="cart-item__btn-icon--red" />
+                      Save
+                    </Button>
+                }
+                <Button className="cart-item__btn btn--text" onClick={() => setOpen(true)}>
+                  <img src="../src/assets/icons/trash.svg" alt="" className="cart-item__btn-icon" />
+                  Delete
+                </Button>
+              </div>
+          }
+
 
         </div>
       </div>
+      <ConfirmModal open={open} setOpen={setOpen} message='Are you sure you want to delete?' />
     </article>
   )
 }

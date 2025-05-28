@@ -166,6 +166,8 @@
         margin-top: 8px;
         overflow-y: auto;
         overscroll-behavior: contain;
+        min-height: 320px;
+        max-height: 320px;
     }
 
     &__option {

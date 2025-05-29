@@ -90,10 +90,10 @@ export default function FavoritePage() {
                                                     Continue Shopping
                                             </Link>
                                         </div>
-                                        <a href="/checkout" className="cart-info__btn btn btn--primary btn--rounded"
+                                        <Link to="/checkout" className="cart-info__btn btn btn--primary btn--rounded"
                                             style={{width: 'auto', marginTop: 0}}>
                                             Check out all
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

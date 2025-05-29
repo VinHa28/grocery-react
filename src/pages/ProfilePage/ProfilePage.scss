@@ -37,7 +37,7 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
-
+                cursor: pointer;
                 @include abstracts.screen(md) {
                     font-size: 1.8rem;
                     line-height: 1.4444; /* 144.444% */
@@ -186,4 +186,30 @@
     }
 
     
+}
+
+
+.new-card {
+    cursor: pointer;
+    height: 100%;
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    border-radius: 10px;
+    border: 1px dashed #D2D1D6;
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.43; /* 142.857% */
+    }
 }

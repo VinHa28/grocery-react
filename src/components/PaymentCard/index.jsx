@@ -11,25 +11,25 @@ export default function PaymentCard({
 
 }) {
     return (
-        <article class="payment-card" style={{ '--background-color': bgColor }}>
-            <img src={img} alt="" class="payment-card__img" />
-            <div class="payment-card__top">
+        <article className="payment-card" style={{ '--background-color': bgColor }}>
+            <img src={img} alt="" className="payment-card__img" />
+            <div className="payment-card__top">
                 <img src="../src/assets/icons/plane.svg" alt="" />
-                <span class="payment-card__type">{type}</span>
+                <span className="payment-card__type">{type}</span>
             </div>
 
-            <p class="payment-card__number">{number}</p>
+            <p className="payment-card__number">{number}</p>
 
-            <div class="payment-card__bottom">
+            <div className="payment-card__bottom">
                 <div>
-                    <p class="payment-card__label">Card Holder</p>
-                    <p class="payment-card__value">{cardHolder}</p>
+                    <p className="payment-card__label">Card Holder</p>
+                    <p className="payment-card__value">{cardHolder}</p>
                 </div>
-                <div class="payment-card__expired">
-                    <p class="payment-card__label">Expired</p>
-                    <p class="payment-card__value">{expired}</p>
+                <div className="payment-card__expired">
+                    <p className="payment-card__label">Expired</p>
+                    <p className="payment-card__value">{expired}</p>
                 </div>
-                <div class="payment-card__circles">
+                <div className="payment-card__circles">
                 </div>
             </div>
         </article>

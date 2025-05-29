@@ -42,7 +42,7 @@ export default function FormInput({
           alt=""
           className='form__input-icon form__input-icon--error' />
 
-        {hasIcon && <img src={icon} alt="" class="form__input-icon" />}
+        {hasIcon && <img src={icon} alt="" className="form__input-icon" />}
       </div>
       {errMessage && <p className='form__error'>{errMessage}</p>}
     </FormGroup>

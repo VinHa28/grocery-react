@@ -1,11 +1,12 @@
 import React from 'react'
 import './Auth.scss'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from '../../components/Button'
 import Logo from '../../components/Logo'
 import { Form, FormCheckbox, FormInput } from '../../components/Form'
 
 export default function LoginPage() {
+  const navigate = useNavigate();
   return (
     <main className="auth">
       <div className="auth__intro d-md-none">
@@ -23,7 +24,7 @@ export default function LoginPage() {
           <p className="auth__desc auth__desc-sign-in">
             Welcome back to sign in. As a returning customer, you have access to your previously saved all information.
           </p>
-          <Form  className="auth__form">
+          <Form onSubmit={() => navigate('/')} className="auth__form">
             <FormInput 
               errMessage={'The email is incorrect format!'}
               id='email'
@@ -47,11 +48,11 @@ export default function LoginPage() {
             />
 
             <div className="form__group form__row">
-              <FormCheckbox label={'Set as default card'}/>
-              <Link to="/resetPassword" className="auth__link form__pull-right">Forgot password?</Link>
+              <FormCheckbox label={'Set as default'}/>
+              <Link to="/reset-password" className="auth__link form__pull-right">Forgot password?</Link>
             </div>
             <div className="form__group auth__btn-group">
-              <Button className="btn--primary auth__btn form__submit-btn">Login</Button>
+              <Button type='submit' className="btn--primary auth__btn form__submit-btn">Login</Button>
               <Button className="btn--outline auth__btn auth__btn--outline">
                 <img src="../src/assets/icons/google.svg" alt="" className="btn__icon" />
                 Sign in with Gmail

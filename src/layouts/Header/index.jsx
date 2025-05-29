@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import ThemeButton from '../../components/Button/ThemeButton';
 import CardPreviewItem from '../../components/CardPreviewItem';
 import { dataSrc } from '../../data/DataSource';
+import { useTheme } from '../../context/ThemeContext';
 
 const dropdownRows = [
   {
@@ -28,6 +29,7 @@ export default function Header({
   isLogged = true,
 }) {
   const [open, setOpen] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
   return (
     <header className='header'>
       <div className="container">
@@ -40,7 +42,7 @@ export default function Header({
           <Navbar open={open} setOpen={setOpen} />
           <div className="navbar__overlay" onClick={() => setOpen(false)}></div>
           <div className="top-action">
-            <ThemeButton className='d-md-none' />
+            {!isLogged && <ThemeButton className='d-md-none' />}
 
             {!isLogged && <>
               <Link to="/login" >
@@ -177,8 +179,8 @@ export default function Header({
                       </li>
 
                       <li>
-                        <a href="#!" className="user-menu__link">
-                          <span>Dark mode</span>
+                        <a href="#!" className="user-menu__link" onClick={toggleTheme}>
+                          <span>{isDark ? 'Light mode' : 'Dark mode'}</span>
                           <img src="../src/assets/icons/sun-dark.svg" alt="" className="user-menu__icon icon" />
                         </a>
                       </li>

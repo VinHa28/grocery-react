@@ -82,10 +82,11 @@ export default function CartItem({
           {
             hasCheckBox ?
               <div className="cart-item__control">
-                <Link to='/checkout'></Link>
-                <Button className="btn--primary btn--rounded cart-item__btn">
-                  Check Out
-                </Button>
+                <Link to='/checkout'>
+                  <Button className="btn--primary btn--rounded cart-item__btn">
+                    Check Out
+                  </Button>
+                </Link>
               </div> :
               <div className="cart-item__control">
                 {

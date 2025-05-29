@@ -7,13 +7,13 @@ export default function AccountInfo({
     icon=''
 }) {
     return (
-        <article class="account-info">
-            <div class="account-info__icon">
-                <img src={icon} alt="" class="icon" />
+        <article className="account-info">
+            <div className="account-info__icon">
+                <img src={icon} alt="" className="icon" />
             </div>
             <div>
-                <h3 class="account-info__title">{title}</h3>
-                <p class="account-info__desc">{desc}</p>
+                <h3 className="account-info__title">{title}</h3>
+                <p className="account-info__desc">{desc}</p>
             </div>
         </article>
     )

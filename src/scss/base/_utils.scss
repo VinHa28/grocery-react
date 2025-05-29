@@ -1,16 +1,16 @@
 $breakpoints: (
-  xxl: 1400px,
-  xl: 1200px,
-  lg: 992px,
-  md: 768px,
-  sm: 576px,
+    xxl: 1400px,
+    xl: 1200px,
+    lg: 992px,
+    md: 768px,
+    sm: 576px,
 );
 
 $display-values: block, flex, grid, none;
 
-// <div class="d-lg-none d-sm-block">
 @mixin make-display($breakpoint: null) {
     $infix: if($breakpoint, "-#{$breakpoint}", "");
+
     @each $display in $display-values {
         .d#{$infix}-#{$display} {
             display: $display !important;

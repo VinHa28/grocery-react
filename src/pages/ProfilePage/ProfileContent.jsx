@@ -2,12 +2,10 @@ import React, { use } from 'react'
 import './ProfilePage.scss'
 import PaymentCard from '../../components/PaymentCard'
 import AccountInfo from '../../components/AccountInfo'
-import Button from '../../components/Button'
-
 import FavoriteItem from '../../components/FavoriteItem'
-import { dataSrc } from '../../data/DataSource'
 
 export default function ProfileContent({
+    setOpen,
     user,
 }) {
     return (
@@ -31,10 +29,10 @@ export default function ProfileContent({
                     ))}
 
                     <div className="col">
-                        <a href="#" className="new-card">
+                        <div className="new-card" onClick={() => setOpen(true)}>
                             <img src="../src/assets/icons/plus.svg" alt="" className="new-card__icon icon" />
                             <p className="new-card__text">Add New Card</p>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>

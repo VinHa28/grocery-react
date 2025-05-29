@@ -1,10 +1,11 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
+import { capitalizeFirstLetter } from 'utils/utils';
+
 import './BreadCrumbs.scss'
-import { Link, useLocation } from 'react-router-dom'
-import { capitalizeFirstLetter } from '../../utils/utils';
+
 
 export default function BreadCrumbs({
-  className ='',
+  className = '',
   pathnames = ['departments',
     'coffee',
     'coffee beans']

@@ -1,11 +1,8 @@
-import React from 'react'
 import './AccountInfo.scss'
 
-export default function AccountInfo({
-    title='',
-    desc='',
-    icon=''
-}) {
+export default function AccountInfo(props) {
+    const { title, desc, icon } = props;
+
     return (
         <article className="account-info">
             <div className="account-info__icon">

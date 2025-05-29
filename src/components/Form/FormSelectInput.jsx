@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './Form.scss'
-import { dataSrc } from '../../data/DataSource'
-import { data } from 'react-router-dom';
 
 const removeDiacritics = (str) => {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();

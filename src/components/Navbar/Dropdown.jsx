@@ -1,12 +1,7 @@
 import React from 'react'
 import './Navbar.scss'
-import MenuColumn from './MenuColumn'
-import SubMenuColumn from './SubMenuColumn'
-import { dataSrc } from '../../data/DataSource'
 import SubMenu from './SubMenu'
 import MenuColumnList from './MenuColumnList'
-
-const activeClass = 'menu-column__item--active';
 
 export default function Dropdown({
     data = [],

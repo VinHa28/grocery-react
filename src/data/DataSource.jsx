@@ -1,3 +1,8 @@
+import product1 from 'assets/img/product/product-1.png';
+import product2 from 'assets/img/product/product-2.png';
+import product3 from 'assets/img/product/product-3.png';
+import product4 from 'assets/img/product/product-4.png';
+
 const reviews = [
     {
         userId: 1,
@@ -208,10 +213,10 @@ const product = {
     name: 'Coffee Beans - Espresso Arabica and Robusta Beans',
     rating,
     images: [
-        './src/assets/img/product/product-1.png',
-        './src/assets/img/product/product-2.png',
-        './src/assets/img/product/product-3.png',
-        './src/assets/img/product/product-4.png',
+        product1,
+        product2,
+        product3,
+        product4,
     ],
     price: 500,
     discount: 0.1,

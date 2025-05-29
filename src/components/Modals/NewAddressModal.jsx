@@ -7,6 +7,7 @@ import { dataSrc } from '../../data/DataSource'
 import FormSelectInput from '../Form/FormSelectInput'
 import ModalBottom from '../../commons/Modal/ModalBottom'
 import Button from '../Button'
+import { provinces } from 'data'
 
 export default function NewAddressModal({
     open,
@@ -18,7 +19,7 @@ export default function NewAddressModal({
         setOpen(false);
     };
     return (
-        <Modal open={open} setOpen={setOpen} style={{ '--content-width': '650px' }}>
+        <Modal open={open} setOpen={setOpen} style={{ '--content-width': '650px' }} className={className}>
             <Form>
                 <ModalHeading>Add a new address</ModalHeading>
 
@@ -85,7 +86,7 @@ export default function NewAddressModal({
                             label='City/District/Town'
                         />
 
-                        <FormSelectInput placeholder='City/District/Towns' options={dataSrc.provinces} />
+                        <FormSelectInput placeholder='City/District/Towns' options={provinces} />
                     </FormGroup>
                 </ModalBody>
 

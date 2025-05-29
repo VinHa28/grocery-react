@@ -1,23 +1,28 @@
-import React, { useState } from 'react'
-import './AddressCard.scss'
+import { useEffect, useState } from 'react'
+import editSvg from 'assets/icons/edit.svg';
 import Button from '../Button'
 import NewAddressModal from '../Modals/NewAddressModal';
-import editSvg from 'assets/icons/edit.svg';
 
-export default function AddressCard({
-    receiver = '',
-    address = '',
-    selected = false,
-    className = '',
-}) {
+import './AddressCard.scss'
+
+export default function AddressCard(props) {
+    /** Data Props */
+    const { receiver, address, className, selected = false } = props;
+
+    /** Component States */
     const [checked, setChecked] = useState(selected)
     const [open, setOpen] = useState(false);
+
+    /** Side Effects */
+    useEffect(() => {
+
+    }, [])
     return (
         <article className={`address-card ${className}`} >
             <div className="address-card__left" >
                 <div className="address-card__choose">
                     <label className="address-card__checkbox" onClick={() => setChecked(!checked)}>
-                        <input type="checkbox" className="address-card__checkbox-input" checked={checked} onChange={() => {}}/>
+                        <input type="checkbox" className="address-card__checkbox-input" checked={checked} onChange={() => { }} />
                     </label>
                 </div>
                 <div className="address-card__info">

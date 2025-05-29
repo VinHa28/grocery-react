@@ -18,7 +18,7 @@ export default function ProfileSidebar({
                     <h3 className="profile-menu__title">Manage Account</h3>
                     <ul className="profile-menu__list">
                         <li className="profile-menu__item">
-                            <Link to='./' className="profile-menu__link">
+                            <Link to='#!' className="profile-menu__link">
                                 <span className="profile-menu__link-icon">
                                     <img src="../src/assets/icons/person.svg" alt="" className="icon"/>
                                 </span>
@@ -26,7 +26,7 @@ export default function ProfileSidebar({
                             </Link>
                         </li>
                         <li className="profile-menu__item">
-                            <Link to='./' className="profile-menu__link">
+                            <Link to='#!' className="profile-menu__link">
                                 <span className="profile-menu__link-icon">
                                     <img src="../src/assets/icons/address.svg" alt="" className="icon"/>
                                 </span>
@@ -34,7 +34,7 @@ export default function ProfileSidebar({
                             </Link>
                         </li>
                         <li className="profile-menu__item">
-                            <Link to='./' className="profile-menu__link">
+                            <Link to='#!' className="profile-menu__link">
                                 <span className="profile-menu__link-icon">
                                     <img src="../src/assets/icons/mail-comucation.svg" alt="" className="icon"/>
                                 </span>
@@ -47,7 +47,7 @@ export default function ProfileSidebar({
                     <h3 className="profile-menu__title">My items</h3>
                     <ul className="profile-menu__list">
                         <li className="profile-menu__item">
-                            <Link to='./' className="profile-menu__link">
+                            <Link to='#!' className="profile-menu__link">
                                 <span className="profile-menu__link-icon">
                                     <img src="../src/assets/icons/recording.svg" alt="" className="icon"/>
                                 </span>
@@ -55,7 +55,7 @@ export default function ProfileSidebar({
                             </Link>
                         </li>
                         <li className="profile-menu__item">
-                            <Link to='./' className="profile-menu__link">
+                            <Link to='#!' className="profile-menu__link">
                                 <span className="profile-menu__link-icon">
                                     <img src="../src/assets/icons/heart.svg" alt="" className="icon"/>
                                 </span>
@@ -63,7 +63,7 @@ export default function ProfileSidebar({
                             </Link>
                         </li>
                         <li className="profile-menu__item">
-                            <Link to='./' className="profile-menu__link">
+                            <Link to='#!' className="profile-menu__link">
                                 <span className="profile-menu__link-icon">
                                     <img src="../src/assets/icons/gift.svg" alt="" className="icon"/>
                                 </span>
@@ -76,7 +76,7 @@ export default function ProfileSidebar({
                     <h3 className="profile-menu__title">Subscriptions & plans</h3>
                     <ul className="profile-menu__list">
                         <li className="profile-menu__item">
-                            <Link to='./' className="profile-menu__link">
+                            <Link to='#!' className="profile-menu__link">
                                 <span className="profile-menu__link-icon">
                                     <img src="../src/assets/icons/protection.svg" alt="" className="icon"/>
                                 </span>
@@ -89,7 +89,7 @@ export default function ProfileSidebar({
                     <h3 className="profile-menu__title">Customer Service</h3>
                     <ul className="profile-menu__list">
                         <li className="profile-menu__item">
-                            <Link to='./' className="profile-menu__link">
+                            <Link to='#!' className="profile-menu__link">
                                 <span className="profile-menu__link-icon">
                                     <img src="../src/assets/icons/warning.svg" alt="" className="icon"/>
                                 </span>
@@ -97,7 +97,7 @@ export default function ProfileSidebar({
                             </Link>
                         </li>
                         <li className="profile-menu__item">
-                            <Link to='./' className="profile-menu__link">
+                            <Link to='#!' className="profile-menu__link">
                                 <span className="profile-menu__link-icon">
                                     <img src="../src/assets/icons/warning-rounded.svg" alt="" className="icon"/>
                                 </span>

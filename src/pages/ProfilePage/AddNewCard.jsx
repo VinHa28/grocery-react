@@ -1,13 +1,12 @@
-import React from 'react'
-import './ProfilePage.scss'
 import Form from '../../components/Form/Form'
-import { useNavigate } from 'react-router-dom'
 import FormRow from '../../components/Form/FormRow';
 import FormInput from '../../components/Form/FormInput';
 import FormGroup from '../../components/Form/FormGroup';
 import FormCheckbox from '../../components/Form/FormCheckbox';
 import FormLabel from '../../components/Form/FormLabel';
 import Button from '../../components/Button';
+
+import './ProfilePage.scss'
 
 export default function AddNewCard({ setOpen }) {
 

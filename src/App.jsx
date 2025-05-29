@@ -1,10 +1,8 @@
-import React from 'react';
-import { useEffect, useState } from 'react'
-import HomePage from './pages/HomePage';
 import { Route, Routes } from 'react-router-dom';
-import DetailPage from './pages/DetailPage';
 import MainLayout from './layouts/MainLayout';
 import ScrollToTop from './components/ScrollToTop';
+import HomePage from './pages/HomePage';
+import DetailPage from './pages/DetailPage';
 import CheckoutPage from './pages/CheckoutPayment/CheckoutPage';
 import CartPage from './pages/CheckoutPayment/CartPage';
 import PaymentPage from './pages/CheckoutPayment/PaymentPage';

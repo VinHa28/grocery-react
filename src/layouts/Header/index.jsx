@@ -6,6 +6,23 @@ import Button from '../../components/Button';
 import Navbar from '../../components/Navbar';
 import { Link } from 'react-router-dom';
 import ThemeButton from '../../components/Button/ThemeButton';
+import CardPreviewItem from '../../components/CardPreviewItem';
+import { dataSrc } from '../../data/DataSource';
+
+const dropdownRows = [
+  {
+    label: 'Subtotal',
+    value: '$415.99'
+  },
+  {
+    label: 'Taxes',
+    value: 'Free'
+  },
+  {
+    label: 'Shipping',
+    value: '$10.00'
+  },
+]
 
 export default function Header({
   isLogged = true,
@@ -52,39 +69,23 @@ export default function Header({
                         </div>
                       </div>
                       <div className="row row-cols-3 gx-2 card-preview-item__list">
-                        <div className="col">
-                          <article className="card-preview-item">
-                            <div className="card-preview-item__img-wrap">
-                              <img src="../src/assets/img/product/product-1.png" alt="" className="card-preview-item__thumb" />
+                        {dataSrc.cartList.map((item, index) => {
+                          return (
+                            <div className="col" key={index}>
+                              <CardPreviewItem
+                                title={`${item.product.brand} - ${item.product.name}`}
+                                price={item.product.price}
+                                img={item.product.img}
+                              />
                             </div>
-                            <h3 className="card-preview-item__title">Lavazza Coffee Blends </h3>
-                            <p className="card-preview-item__price">$329.00</p>
-                          </article>
-                        </div>
-                        <div className="col">
-                          <article className="card-preview-item">
-                            <div className="card-preview-item__img-wrap">
-                              <img src="../src/assets/img/product/product-2.png" alt="" className="card-preview-item__thumb" />
-                            </div>
-                            <h3 className="card-preview-item__title">Coffee Beans Espresso</h3>
-                            <p className="card-preview-item__price">$39.99</p>
-                          </article>
-                        </div>
-                        <div className="col">
-                          <article className="card-preview-item">
-                            <div className="card-preview-item__img-wrap">
-                              <img src="../src/assets/img/product/product-3.png" alt="" className="card-preview-item__thumb" />
-                            </div>
-                            <h3 className="card-preview-item__title">Qualità Oro Mountain</h3>
-                            <p className="card-preview-item__price">$47.00</p>
-                          </article>
-                        </div>
+                          );
+                        })}
                       </div>
                       <div className="action-dropdown__separate"></div>
                       <div className="action-dropdown__checkout">
-                        <a href="/checkout" >
+                        <Link to="/checkout" >
                           <Button className="btn--primary btn--rounded action-dropdown__btn">Check Out All</Button>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -107,51 +108,31 @@ export default function Header({
                         </div>
                       </div>
                       <div className="row row-cols-3 gx-2 card-preview-item__list">
-                        <div className="col">
-                          <article className="card-preview-item">
-                            <div className="card-preview-item__img-wrap">
-                              <img src="../src/assets/img/product/product-1.png" alt="" className="card-preview-item__thumb" />
+                        {dataSrc.cartList.map((item, index) => {
+                          return (
+                            <div className="col" key={index}>
+                              <CardPreviewItem
+                                title={`${item.product.brand} - ${item.product.name}`}
+                                price={item.product.price}
+                                img={item.product.img}
+                              />
                             </div>
-                            <h3 className="card-preview-item__title">Lavazza Coffee Blends </h3>
-                            <p className="card-preview-item__price">$329.00</p>
-                          </article>
-                        </div>
-                        <div className="col">
-                          <article className="card-preview-item">
-                            <div className="card-preview-item__img-wrap">
-                              <img src="../src/assets/img/product/product-2.png" alt="" className="card-preview-item__thumb" />
-                            </div>
-                            <h3 className="card-preview-item__title">Coffee Beans Espresso</h3>
-                            <p className="card-preview-item__price">$39.99</p>
-                          </article>
-                        </div>
-                        <div className="col">
-                          <article className="card-preview-item">
-                            <div className="card-preview-item__img-wrap">
-                              <img src="../src/assets/img/product/product-3.png" alt="" className="card-preview-item__thumb" />
-                            </div>
-                            <h3 className="card-preview-item__title">Qualità Oro Mountain</h3>
-                            <p className="card-preview-item__price">$47.00</p>
-                          </article>
-                        </div>
+                          );
+                        })}
                       </div>
                       <div className="action-dropdown__bottom">
-                        <div className="action-dropdown__row">
-                          <span className="action-dropdown__label">Subtotal:</span>
-                          <span className="action-dropdown__value">$415.99</span>
-                        </div>
-                        <div className="action-dropdown__row">
-                          <span className="action-dropdown__label">Texes:</span>
-                          <span className="action-dropdown__value">Free</span>
-                        </div>
-                        <div className="action-dropdown__row">
-                          <span className="action-dropdown__label">Shipping:</span>
-                          <span className="action-dropdown__value">$10.00</span>
-                        </div>
+                        {dropdownRows.map((item, index) =>
+                          <div className="action-dropdown__row" key={index}>
+                            <span className="action-dropdown__label">{item.label}:</span>
+                            <span className="action-dropdown__value">{item.value}</span>
+                          </div>
+                        )}
+
                         <div className="action-dropdown__row">
                           <span className="action-dropdown__label action-dropdown__label--bold">Total Price:</span>
                           <span className="action-dropdown__value action-dropdown__value--bold">$425.99</span>
                         </div>
+
                       </div>
                       <div className="action-dropdown__checkout">
                         <a href="/checkout" >
@@ -179,20 +160,20 @@ export default function Header({
 
                     <ul className="user-menu__list">
                       <li>
-                        <Link to="/profile" className="user-menu__link">
+                        <a href="/profile" className="user-menu__link">
                           Profile
                           <img src="../src/assets/icons/user.svg" alt="" className="user-menu__icon icon" />
-                        </Link>
+                        </a>
                       </li>
                       <li >
-                        <Link to="/cart" className="user-menu__link">
+                        <a href="/cart" className="user-menu__link">
                           Your cart
-                        </Link>
+                        </a>
                       </li>
                       <li className="user-menu__separate">
-                        <Link to="/favorite" className="user-menu__link">
+                        <a href="/favorite" className="user-menu__link">
                           Favorite list
-                        </Link>
+                        </a>
                       </li>
 
                       <li>

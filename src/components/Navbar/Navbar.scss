@@ -86,9 +86,9 @@
       height: calc(100% - 40px);
     }
 
-  @include abstracts.screen(md) {
-    height: calc(100% - 120px);
-  }
+    @include abstracts.screen(md) {
+      height: calc(100% - 150px);
+    }
   }
 
   &__link {

@@ -4,6 +4,8 @@ import ThemeButton from '../Button/ThemeButton'
 import { Link } from 'react-router-dom'
 import { dataSrc } from '../../data/DataSource'
 import Dropdown from './Dropdown'
+import NavbarItem from './NavbarItem'
+import useBodyScrollLock from '../../commons/useBodyScrollLock'
 
 export default function Navbar({
     open = false,
@@ -31,7 +33,7 @@ export default function Navbar({
         }
     ]
 
-    const [leftPosition, setLeftPosition] = useState(0);
+    useBodyScrollLock(open);
     return (
         <nav className={`navbar ${open ? 'show' : 'hide'}`} id="navbar">
             <button className="navbar__close-btn" onClick={() => setOpen(false)}>
@@ -52,28 +54,30 @@ export default function Navbar({
                 <span className="nav-btn__qnt">{dataSrc.user.favoriteList.length}</span>
             </Link>
 
-            <ul className="navbar__menu js-dropdown-list">
+            <ul className="navbar__menu">
                 {navItems.map((navItem, index) => {
                     const { hasMainMenu, data, columnPerGroup } = navItem;
                     return (
-                        <li
-                            key={index} className="navbar__item "
-                            onMouseEnter={(e) => {
-                                const dropdownInner = e.currentTarget.querySelector('.dropdown__inner');
-                                if (dropdownInner) {
-                                    const itemLeft = e.currentTarget.getBoundingClientRect().left;
-                                    const dropdownLeft = dropdownInner.getBoundingClientRect().left;
-                                    const relativeLeft = itemLeft - dropdownLeft + (e.currentTarget.offsetWidth / 2);
-                                    dropdownInner.style.setProperty('--arrow-left-pos', `${relativeLeft}px`);
-                                }
-                            }}
-                        >
-                            <a href="#" className="navbar__link">
-                                {navItem?.name}
-                                <img src="./src/assets/icons/arrow-down.svg" alt="" className="navbar__arrow icon" />
-                            </a>
-                            <Dropdown hasMainMenu={hasMainMenu} data={data} columnPerGroup={columnPerGroup} />
-                        </li>
+                        // <li
+                        //     key={index} className="navbar__item"
+                        //     onMouseEnter={(e) => {
+                        //         const dropdownInner = e.currentTarget.querySelector('.dropdown__inner');
+                        //         if (dropdownInner) {
+                        //             const itemLeft = e.currentTarget.getBoundingClientRect().left;
+                        //             const dropdownLeft = dropdownInner.getBoundingClientRect().left;
+                        //             const relativeLeft = itemLeft - dropdownLeft + (e.currentTarget.offsetWidth / 2);
+                        //             dropdownInner.style.setProperty('--arrow-left-pos', `${relativeLeft}px`);
+                        //         }
+                        //     }}
+                        // >
+                        //     <a href="#" className="navbar__link">
+                        //         {navItem?.name}
+                        //         <img src="./src/assets/icons/arrow-down.svg" alt="" className="navbar__arrow icon" />
+                        //     </a>
+                        //     <Dropdown hasMainMenu={hasMainMenu} data={data} columnPerGroup={columnPerGroup} />
+                        // </li>
+
+                        <NavbarItem key={index} name={navItem.name} hasMainMenu={hasMainMenu} data={data} columnPerGroup={columnPerGroup}/>
                     )
                 })}
             </ul>

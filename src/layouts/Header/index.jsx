@@ -10,7 +10,7 @@ import DocumentIcon from "assets/icons/document.svg";
 import HeartIcon from "assets/icons/heart.svg";
 import ArrowUpIcon from "assets/icons/arrow-up.png";
 import BuyIcon from "assets/icons/buy.svg";
-import LoginIcon from "assets/icons/logout.svg";
+import LogoutIcon from "assets/icons/logout.svg";
 import UserIcon from "assets/icons/user.svg";
 import SunDarkIcon from "assets/icons/sun-dark.svg";
 import SettingIcon from "assets/icons/setting.svg";
@@ -344,9 +344,9 @@ export default function Header({ isLogged = true }) {
                                                         to="/login"
                                                         className="user-menu__link"
                                                     >
-                                                        Login
+                                                        Logout
                                                         <img
-                                                            src={LoginIcon}
+                                                            src={LogoutIcon}
                                                             alt=""
                                                             className="user-menu__icon icon"
                                                         />

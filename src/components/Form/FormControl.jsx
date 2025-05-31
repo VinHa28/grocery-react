@@ -1,10 +1,6 @@
-import React from 'react'
-import './Form.scss'
+import React from "react";
+import "./Form.scss";
 
-export default function FormControl({children, className=''}) {
-  return (
-    <div className={`form__control ${classsName}`}>
-      {children}
-    </div>
-  )
+export default function FormControl({ children, className }) {
+    return <div className={`form__control ${className}`}>{children}</div>;
 }

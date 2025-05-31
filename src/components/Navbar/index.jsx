@@ -1,16 +1,12 @@
-import React, { useRef, useState } from 'react'
-import './Navbar.scss'
-import ThemeButton from '../Button/ThemeButton'
-import { Link } from 'react-router-dom'
-import { dataSrc } from '../../data/DataSource'
-import Dropdown from './Dropdown'
-import NavbarItem from './NavbarItem'
-import useBodyScrollLock from '../../commons/useBodyScrollLock'
+import { Link } from "react-router-dom";
+import ThemeButton from "../Button/ThemeButton";
+import NavbarItem from "./NavbarItem";
+import useBodyScrollLock from "commons/useBodyScrollLock";
+import { cartList, user, departments } from "data";
 
-export default function Navbar({
-    open = false,
-    setOpen = () => { },
-}) {
+import "./Navbar.scss";
+
+export default function Navbar({ open = false, setOpen = () => {} }) {
     const navItems = [
         {
             id: 1,
@@ -21,37 +17,48 @@ export default function Navbar({
             id: 2,
             name: "Grocery",
             hasMainMenu: false,
-            data: dataSrc.groceries.columns,
-            columnPerGroup: dataSrc.groceries.columnPerGroup
+            data: departments[1].columns,
+            columnPerGroup: departments[1].columnPerGroup,
         },
         {
             id: 3,
-            name: "Beaty",
+            name: "Beauty",
             hasMainMenu: false,
-            data: dataSrc.beauty.columns,
-            columnPerGroup: dataSrc.beauty.columnPerGroup
-        }
-    ]
+            data: departments[2].columns,
+            columnPerGroup: departments[2].columnPerGroup,
+        },
+    ];
 
     useBodyScrollLock(open);
     return (
-        <nav className={`navbar ${open ? 'show' : 'hide'}`} id="navbar">
-            <button className="navbar__close-btn" onClick={() => setOpen(false)}>
+        <nav className={`navbar ${open ? "show" : "hide"}`} id="navbar">
+            <button
+                className="navbar__close-btn"
+                onClick={() => setOpen(false)}
+            >
                 <img src="./src/assets/icons/arrow-left.svg" alt="" />
             </button>
 
-            <ThemeButton className='d-none d-md-block' />
+            <ThemeButton className="d-none d-md-block" />
 
             <Link to="/cart" className="nav-btn d-none d-md-flex">
-                <img src="./src/assets/icons/buy.svg" alt="" className="icon nav-btn__icon" />
+                <img
+                    src="./src/assets/icons/buy.svg"
+                    alt=""
+                    className="icon nav-btn__icon"
+                />
                 <span className="nav-btn__title">Cart</span>
-                <span className="nav-btn__qnt">{dataSrc.cartList.length}</span>
+                <span className="nav-btn__qnt">{cartList.length}</span>
             </Link>
 
             <Link to="/favorite" className="nav-btn d-none d-md-flex">
-                <img src="./src/assets/icons/heart.svg" alt="" className="icon nav-btn__icon" />
+                <img
+                    src="./src/assets/icons/heart.svg"
+                    alt=""
+                    className="icon nav-btn__icon"
+                />
                 <span className="nav-btn__title">Favorite</span>
-                <span className="nav-btn__qnt">{dataSrc.user.favoriteList.length}</span>
+                <span className="nav-btn__qnt">{user.favoriteList.length}</span>
             </Link>
 
             <ul className="navbar__menu">
@@ -65,9 +72,9 @@ export default function Navbar({
                             data={data}
                             columnPerGroup={columnPerGroup}
                         />
-                    )
+                    );
                 })}
             </ul>
         </nav>
-    )
+    );
 }

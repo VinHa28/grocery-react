@@ -13,10 +13,6 @@ export default function AddressCard(props) {
     const [checked, setChecked] = useState(selected)
     const [open, setOpen] = useState(false);
 
-    /** Side Effects */
-    useEffect(() => {
-
-    }, [])
     return (
         <article className={`address-card ${className}`} >
             <div className="address-card__left" >

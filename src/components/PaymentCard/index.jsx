@@ -1,20 +1,25 @@
-import React from 'react'
-import './PaymentCard.scss'
+import AirPlaneIcon from "img/card/air-plane.svg";
+import PlaneIcon from "assets/icons/plane.svg";
 
-export default function PaymentCard({
-    img = '../src/assets/img/card/air-plane.svg',
-    bgColor='#1E2E69',
-    type = '',
-    number = '',
-    cardHolder = '',
-    expired = '',
+import "./PaymentCard.scss";
 
-}) {
+export default function PaymentCard(props) {
+    const {
+        img = AirPlaneIcon,
+        bgColor = "#1E2E69",
+        type,
+        number,
+        cardHolder,
+        expired,
+    } = props;
     return (
-        <article className="payment-card" style={{ '--background-color': bgColor }}>
+        <article
+            className="payment-card"
+            style={{ "--background-color": bgColor }}
+        >
             <img src={img} alt="" className="payment-card__img" />
             <div className="payment-card__top">
-                <img src="../src/assets/icons/plane.svg" alt="" />
+                <img src={PlaneIcon} alt="" />
                 <span className="payment-card__type">{type}</span>
             </div>
 
@@ -29,9 +34,8 @@ export default function PaymentCard({
                     <p className="payment-card__label">Expired</p>
                     <p className="payment-card__value">{expired}</p>
                 </div>
-                <div className="payment-card__circles">
-                </div>
+                <div className="payment-card__circles"></div>
             </div>
         </article>
-    )
+    );
 }

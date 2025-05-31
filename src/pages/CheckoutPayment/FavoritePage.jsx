@@ -1,15 +1,18 @@
-import React from "react";
-import "./CheckoutPayment.scss";
-import SearchBar from "../../components/SearchBar";
-import BreadCrumbs from "../../components/BreadCrumbs";
+import SearchBar from "components/SearchBar";
 import { Link } from "react-router-dom";
-import Button from "../../components/Button";
-import CartItem from "../../components/CartItem";
+import BreadCrumbs from "components/BreadCrumbs";
+import CartItem from "components/CartItem";
+import ArrowDownIcon from "assets/icons/arrow-down-2.svg";
+import Product1Img from "img/product/product-1.png";
+import Product2Img from "img/product/product-2.png";
+import Product3Img from "img/product/product-3.png";
+
+import "./CheckoutPayment.scss";
 
 const favoriteList = [
     {
         brand: "LavAzza",
-        img: "../src/assets/img/product/product-2.png",
+        img: Product2Img,
         inStock: true,
         initialQuantity: 1,
         isFavored: true,
@@ -19,7 +22,7 @@ const favoriteList = [
     },
     {
         brand: "LavAzza",
-        img: "../src/assets/img/product/product-1.png",
+        img: Product1Img,
         inStock: true,
         initialQuantity: 1,
         isFavored: true,
@@ -29,7 +32,7 @@ const favoriteList = [
     },
     {
         brand: "LavAzza",
-        img: "../src/assets/img/product/product-3.png",
+        img: Product3Img,
         inStock: true,
         initialQuantity: 1,
         isFavored: true,
@@ -38,6 +41,7 @@ const favoriteList = [
         hasCheckBox: true,
     },
 ];
+
 export default function FavoritePage() {
     const pathnames = ["Home", "Favorite"];
     return (
@@ -97,7 +101,7 @@ export default function FavoritePage() {
                                                 className="cart-info__continue-link"
                                             >
                                                 <img
-                                                    src="../src/assets/icons/arrow-down-2.svg"
+                                                    src={ArrowDownIcon}
                                                     alt=""
                                                     className="cart-info__continue-icon icon"
                                                 />

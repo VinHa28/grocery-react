@@ -68,7 +68,7 @@ export default function ReviewCard(props) {
                 <span className="review-card__title review-card__title--smaller">
                     ({rating} )
                     <img
-                        src="./src/assets/icons/star.svg"
+                        src="assets/icons/star.svg"
                         alt=""
                         className="review-card__star"
                     />

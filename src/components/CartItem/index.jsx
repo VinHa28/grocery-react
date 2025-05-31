@@ -70,7 +70,7 @@ export default function CartItem(props) {
                                 onClick={() => setQuantity(quantity + 1)}
                             >
                                 <img
-                                    src="../src/assets/icons/plus.svg"
+                                    src="assets/icons/plus.svg"
                                     alt=""
                                     className="icon"
                                 />
@@ -85,7 +85,7 @@ export default function CartItem(props) {
                                         onClick={handleChangeLiked}
                                     >
                                         <img
-                                            src="../src/assets/icons/heart.svg"
+                                            src="assets/icons/heart.svg"
                                             alt=""
                                             className="cart-item__btn-icon"
                                         />
@@ -97,7 +97,7 @@ export default function CartItem(props) {
                                         onClick={handleChangeLiked}
                                     >
                                         <img
-                                            src="../src/assets/icons/red-heart.svg"
+                                            src="assets/icons/red-heart.svg"
                                             alt=""
                                             className="cart-item__btn-icon--red"
                                         />
@@ -109,7 +109,7 @@ export default function CartItem(props) {
                                     onClick={() => setOpen(true)}
                                 >
                                     <img
-                                        src="../src/assets/icons/trash.svg"
+                                        src="assets/icons/trash.svg"
                                         alt=""
                                         className="cart-item__btn-icon"
                                     />
@@ -138,7 +138,7 @@ export default function CartItem(props) {
                                     onClick={handleChangeLiked}
                                 >
                                     <img
-                                        src="./src/assets/icons/heart.svg"
+                                        src="assets/icons/heart.svg"
                                         alt=""
                                         className="cart-item__btn-icon"
                                     />
@@ -150,7 +150,7 @@ export default function CartItem(props) {
                                     onClick={handleChangeLiked}
                                 >
                                     <img
-                                        src="./src/assets/icons/red-heart.svg"
+                                        src="assets/icons/red-heart.svg"
                                         alt=""
                                         className="cart-item__btn-icon--red"
                                     />
@@ -162,7 +162,7 @@ export default function CartItem(props) {
                                 onClick={() => setOpen(true)}
                             >
                                 <img
-                                    src="../src/assets/icons/trash.svg"
+                                    src="assets/icons/trash.svg"
                                     alt=""
                                     className="cart-item__btn-icon"
                                 />

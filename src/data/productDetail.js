@@ -5,6 +5,7 @@ import product4 from "img/product/product-4.png";
 import avatar_1 from "img/avatar/avatar-1.jpg";
 import avatar_2 from "img/avatar/avatar-2.jpg";
 import avatar_3 from "img/avatar/avatar-3.jpg";
+
 const reviews = [
     {
         userId: 1,
@@ -73,7 +74,7 @@ const product = {
                     </p>
                 </blockquote>
                 <p>
-                    <img src="../src/assets/img/product/product-1.png" alt="" />
+                    <img src="${product1}" alt="" />
                     <em>Lorem ipsum dolor sit amet consectetur adipisicing.</em>
                 </p>
                 <hr />
@@ -86,7 +87,7 @@ const product = {
                     nihil odio illo, placeat fuga. Repudiandae!
                 </p>
                 <p>
-                    <img src="../src/assets/img/product/product-1.png" alt="" />
+                    <img src="${product1}" alt="" />
                     <em>Lorem ipsum dolor sit amet consectetur adipisicing.</em>
                 </p>
                 <p>

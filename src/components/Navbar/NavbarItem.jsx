@@ -23,7 +23,7 @@ export default function NavbarItem({
         >
             <a href="#" className="navbar__link" onClick={() => setIsActive(!isActive)}>
                 {name}
-                <img src="./src/assets/icons/arrow-down.svg" alt="" className="navbar__arrow icon" />
+                <img src="assets/icons/arrow-down.svg" alt="" className="navbar__arrow icon" />
             </a>
             <Dropdown hasMainMenu={hasMainMenu} data={data} columnPerGroup={columnPerGroup} />
         </li>

@@ -36,14 +36,14 @@ export default function Navbar({ open = false, setOpen = () => {} }) {
                 className="navbar__close-btn"
                 onClick={() => setOpen(false)}
             >
-                <img src="./src/assets/icons/arrow-left.svg" alt="" />
+                <img src="assets/icons/arrow-left.svg" alt="" />
             </button>
 
             <ThemeButton className="d-none d-md-block" />
 
             <Link to="/cart" className="nav-btn d-none d-md-flex">
                 <img
-                    src="./src/assets/icons/buy.svg"
+                    src="assets/icons/buy.svg"
                     alt=""
                     className="icon nav-btn__icon"
                 />
@@ -53,7 +53,7 @@ export default function Navbar({ open = false, setOpen = () => {} }) {
 
             <Link to="/favorite" className="nav-btn d-none d-md-flex">
                 <img
-                    src="./src/assets/icons/heart.svg"
+                    src="assets/icons/heart.svg"
                     alt=""
                     className="icon nav-btn__icon"
                 />

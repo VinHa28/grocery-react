@@ -9,7 +9,7 @@ export default function GiftItem({
     return (
         <article className="gift-item">
             <div className="gift-item__icon-wrap">
-                <img src="./src/assets/icons/gift.svg" alt="" className="gift-item__icon" />
+                <img src="assets/icons/gift.svg" alt="" className="gift-item__icon" />
             </div>
             <div className="gift-item__content">
                 <h3 className="gift-item__title">{title}</h3>

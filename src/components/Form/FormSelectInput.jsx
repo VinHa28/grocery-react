@@ -92,7 +92,7 @@ export default function FormSelectInput({
                         placeholder="Search"
                         value={search}
                     />
-                    <img src="../src/assets/icons/search.svg" alt="" className="form__search-icon icon" />
+                    <img src="assets/icons/search.svg" alt="" className="form__search-icon icon" />
                 </div>
 
                 <ul className="form__options-list">

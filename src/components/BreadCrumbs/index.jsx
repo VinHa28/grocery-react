@@ -22,7 +22,7 @@ export default function BreadCrumbs({
               {/* <Link to={routeTo} className="breadcrumbs__link">   */}
               <Link to='#' className="breadcrumbs__link">
                 {capitalizeFirstLetter(name)}
-                <img src="./src/assets/icons/arrow-right.svg" alt="" />
+                <img src="assets/icons/arrow-right.svg" alt="" />
               </Link>
             </li>) : (
             <li key={routeTo}>

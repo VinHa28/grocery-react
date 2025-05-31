@@ -1,14 +1,24 @@
 import React, { useState } from "react";
-import "./ActionDropdown.scss";
-import "./Header.scss";
+import { Link } from "react-router-dom";
+import { useTheme } from "context/ThemeContext";
 import Logo from "components/Logo";
 import Button from "components/Button";
 import Navbar from "components/Navbar";
-import { Link } from "react-router-dom";
 import ThemeButton from "components/Button/ThemeButton";
 import CardPreviewItem from "components/CardPreviewItem";
-import { useTheme } from "context/ThemeContext";
+import DocumentIcon from "assets/icons/document.svg";
+import HeartIcon from "assets/icons/heart.svg";
+import ArrowUpIcon from "assets/icons/arrow-up.png";
+import BuyIcon from "assets/icons/buy.svg";
+import LoginIcon from "assets/icons/logout.svg";
+import UserIcon from "assets/icons/user.svg";
+import SunDarkIcon from "assets/icons/sun-dark.svg";
+import SettingIcon from "assets/icons/setting.svg";
+import Avatar from "img/avatar.JPG";
 import { cartList } from "data";
+
+import "./ActionDropdown.scss";
+import "./Header.scss";
 
 const dropdownRows = [
     {
@@ -37,7 +47,7 @@ export default function Header({ isLogged = true }) {
                         onClick={() => setOpen(true)}
                     >
                         <img
-                            src="../src/assets/icons/document.svg"
+                            src={DocumentIcon}
                             className="icon top-bar__more-icon"
                         />
                     </button>
@@ -73,7 +83,7 @@ export default function Header({ isLogged = true }) {
                                         <Link to="/favorite">
                                             <button className="top-action__btn">
                                                 <img
-                                                    src="../src/assets/icons/heart.svg"
+                                                    src={HeartIcon}
                                                     alt=""
                                                     className="top-action__icon icon"
                                                 />
@@ -85,7 +95,7 @@ export default function Header({ isLogged = true }) {
                                         <div className="action-dropdown">
                                             <div className="action-dropdown__inner">
                                                 <img
-                                                    src="../src/assets/icons/arrow-up.png"
+                                                    src={ArrowUpIcon}
                                                     alt=""
                                                     className="action-dropdown__arrow"
                                                 />
@@ -144,7 +154,7 @@ export default function Header({ isLogged = true }) {
                                         <Link to="/cart">
                                             <button className="top-action__btn">
                                                 <img
-                                                    src="../src/assets/icons/buy.svg"
+                                                    src={BuyIcon}
                                                     alt=""
                                                     className="top-action__icon icon"
                                                 />
@@ -156,7 +166,7 @@ export default function Header({ isLogged = true }) {
                                         <div className="action-dropdown">
                                             <div className="action-dropdown__inner">
                                                 <img
-                                                    src="../src/assets/icons/arrow-up.png"
+                                                    src={ArrowUpIcon}
                                                     alt=""
                                                     className="action-dropdown__arrow"
                                                 />
@@ -239,21 +249,21 @@ export default function Header({ isLogged = true }) {
                                 </div>
                                 <div className="top-action__user">
                                     <img
-                                        src="../src/assets/img/avatar.JPG"
+                                        src={Avatar}
                                         alt=""
                                         className="top-action__avatar"
                                     />
                                     <div className="action-dropdown top-action__dropdown">
                                         <div className="action-dropdown__inner user-menu">
                                             <img
-                                                src="../src/assets/icons/arrow-up.png"
+                                                src={ArrowUpIcon}
                                                 alt=""
                                                 className="action-dropdown__arrow top-action__dropdown-arrow"
                                             />
 
                                             <div className="user-menu__top">
                                                 <img
-                                                    src="../src/assets/img/avatar.JPG"
+                                                    src={Avatar}
                                                     alt=""
                                                     className="user-menu__avatar"
                                                 />
@@ -273,7 +283,7 @@ export default function Header({ isLogged = true }) {
                                                     >
                                                         Profile
                                                         <img
-                                                            src="../src/assets/icons/user.svg"
+                                                            src={UserIcon}
                                                             alt=""
                                                             className="user-menu__icon icon"
                                                         />
@@ -308,7 +318,7 @@ export default function Header({ isLogged = true }) {
                                                                 : "Dark mode"}
                                                         </span>
                                                         <img
-                                                            src="../src/assets/icons/sun-dark.svg"
+                                                            src={SunDarkIcon}
                                                             alt=""
                                                             className="user-menu__icon icon"
                                                         />
@@ -322,7 +332,7 @@ export default function Header({ isLogged = true }) {
                                                     >
                                                         Settings
                                                         <img
-                                                            src="../src/assets/icons/setting.svg"
+                                                            src={SettingIcon}
                                                             alt=""
                                                             className="user-menu__icon icon"
                                                         />
@@ -334,9 +344,9 @@ export default function Header({ isLogged = true }) {
                                                         to="/login"
                                                         className="user-menu__link"
                                                     >
-                                                        Logout
+                                                        Login
                                                         <img
-                                                            src="../src/assets/icons/logout.svg"
+                                                            src={LoginIcon}
                                                             alt=""
                                                             className="user-menu__icon icon"
                                                         />

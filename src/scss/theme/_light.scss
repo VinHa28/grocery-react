@@ -100,6 +100,8 @@ html {
   --theme-btn-circle-pos: translateX(0);
   --theme-btn-circle-color: #171C28;
 
+  --select-option-bg: #f8f8fb;
+
   @include abstracts.screen(lg) {
     --header-bg-color: #fff;
     --body-bg-color: #f6f6f6;

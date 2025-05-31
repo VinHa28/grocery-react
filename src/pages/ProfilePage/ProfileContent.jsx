@@ -1,8 +1,9 @@
-import React, { use } from 'react'
+import PaymentCard from 'components/PaymentCard'
+import AccountInfo from 'components/AccountInfo'
+import FavoriteItem from 'components/FavoriteItem'
+import PlusIcon from "assets/icons/plus.svg";
+
 import './ProfilePage.scss'
-import PaymentCard from '../../components/PaymentCard'
-import AccountInfo from '../../components/AccountInfo'
-import FavoriteItem from '../../components/FavoriteItem'
 
 export default function ProfileContent({
     setOpen,
@@ -30,7 +31,7 @@ export default function ProfileContent({
 
                     <div className="col">
                         <div className="new-card" onClick={() => setOpen(true)}>
-                            <img src="../src/assets/icons/plus.svg" alt="" className="new-card__icon icon" />
+                            <img src={PlusIcon} alt="" className="new-card__icon icon" />
                             <p className="new-card__text">Add New Card</p>
                         </div>
                     </div>

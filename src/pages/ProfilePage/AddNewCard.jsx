@@ -1,10 +1,11 @@
-import Form from '../../components/Form/Form'
-import FormRow from '../../components/Form/FormRow';
-import FormInput from '../../components/Form/FormInput';
-import FormGroup from '../../components/Form/FormGroup';
-import FormCheckbox from '../../components/Form/FormCheckbox';
-import FormLabel from '../../components/Form/FormLabel';
-import Button from '../../components/Button';
+import Form from 'components/Form/Form'
+import FormRow from 'components/Form/FormRow';
+import FormInput from 'components/Form/FormInput';
+import FormGroup from 'components/Form/FormGroup';
+import FormCheckbox from 'components/Form/FormCheckbox';
+import FormLabel from 'components/Form/FormLabel';
+import Button from 'components/Button';
+import ArrowLeftIcon from  "assets/icons/arrow-left.svg";
 
 import './ProfilePage.scss'
 
@@ -15,7 +16,7 @@ export default function AddNewCard({ setOpen }) {
             <div className="col-12">
                 <h2 className="profile-info__heading">
                     <p className="profile-info__heading-link" onClick={() => setOpen(false)}>
-                        <img src="../src/assets/icons/arrow-left.svg" alt="" className="icon" />
+                        <img src={ArrowLeftIcon} alt="" className="icon" />
                         Add credit or debit card
                     </p>
                 </h2>

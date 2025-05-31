@@ -1,7 +1,12 @@
-import React from "react";
+import Logo from "components/Logo";
+import Button from "components/Button";
+import FaceBookIcon from "assets/icons/facebook.svg";
+import YoutobeIcon from "assets/icons/youtobe.svg";
+import TiktokIcon from "assets/icons/tiktok.svg";
+import XIcon from "assets/icons/x.svg";
+import LinkInIcon from "assets/icons/linkin.svg";
+
 import "./Footer.scss";
-import Logo from "../../components/Logo";
-import Button from "../../components/Button";
 
 export default function Footer() {
     return (
@@ -164,7 +169,7 @@ export default function Footer() {
                             target="_blank"
                         >
                             <img
-                                src="assets/icons/facebook.svg"
+                                src={FaceBookIcon}
                                 alt=""
                                 className="footer__social-img"
                             />
@@ -175,7 +180,7 @@ export default function Footer() {
                             target="_blank"
                         >
                             <img
-                                src="assets/icons/youtobe.svg"
+                                src={YoutobeIcon}
                                 alt=""
                                 className="footer__social-img"
                             />
@@ -186,7 +191,7 @@ export default function Footer() {
                             target="_blank"
                         >
                             <img
-                                src="assets/icons/tiktok.svg"
+                                src={TiktokIcon}
                                 alt=""
                                 className="footer__social-img"
                             />
@@ -197,7 +202,7 @@ export default function Footer() {
                             target="_blank"
                         >
                             <img
-                                src="assets/icons/x.svg"
+                                src={XIcon}
                                 alt=""
                                 className="footer__social-img"
                             />
@@ -208,7 +213,7 @@ export default function Footer() {
                             target="_blank"
                         >
                             <img
-                                src="assets/icons/linkin.svg"
+                                src={LinkInIcon}
                                 alt=""
                                 className="footer__social-img"
                             />

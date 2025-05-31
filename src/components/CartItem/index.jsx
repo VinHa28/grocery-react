@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import Button from "../Button";
 import ConfirmModal from "../Modals/ConfirmModal";
 import MinusIcon from "assets/icons/minus.svg";
+import PlusIcon from "assets/icons/plus.svg";
+import HeartIcon from "assets/icons/heart.svg";
+import RedHeartIcon from "assets/icons/red-heart.svg";
+import TrashIcon from "assets/icons/trash.svg";
 
 import "./CartItem.scss";
 
@@ -70,7 +74,7 @@ export default function CartItem(props) {
                                 onClick={() => setQuantity(quantity + 1)}
                             >
                                 <img
-                                    src="assets/icons/plus.svg"
+                                    src={PlusIcon}
                                     alt=""
                                     className="icon"
                                 />
@@ -85,7 +89,7 @@ export default function CartItem(props) {
                                         onClick={handleChangeLiked}
                                     >
                                         <img
-                                            src="assets/icons/heart.svg"
+                                            src={HeartIcon}
                                             alt=""
                                             className="cart-item__btn-icon"
                                         />
@@ -97,7 +101,7 @@ export default function CartItem(props) {
                                         onClick={handleChangeLiked}
                                     >
                                         <img
-                                            src="assets/icons/red-heart.svg"
+                                            src={RedHeartIcon}
                                             alt=""
                                             className="cart-item__btn-icon--red"
                                         />
@@ -109,7 +113,7 @@ export default function CartItem(props) {
                                     onClick={() => setOpen(true)}
                                 >
                                     <img
-                                        src="assets/icons/trash.svg"
+                                        src={TrashIcon}
                                         alt=""
                                         className="cart-item__btn-icon"
                                     />
@@ -138,7 +142,7 @@ export default function CartItem(props) {
                                     onClick={handleChangeLiked}
                                 >
                                     <img
-                                        src="assets/icons/heart.svg"
+                                        src={HeartIcon}
                                         alt=""
                                         className="cart-item__btn-icon"
                                     />
@@ -150,7 +154,7 @@ export default function CartItem(props) {
                                     onClick={handleChangeLiked}
                                 >
                                     <img
-                                        src="assets/icons/red-heart.svg"
+                                        src={RedHeartIcon}
                                         alt=""
                                         className="cart-item__btn-icon--red"
                                     />
@@ -162,7 +166,7 @@ export default function CartItem(props) {
                                 onClick={() => setOpen(true)}
                             >
                                 <img
-                                    src="assets/icons/trash.svg"
+                                    src={TrashIcon}
                                     alt=""
                                     className="cart-item__btn-icon"
                                 />

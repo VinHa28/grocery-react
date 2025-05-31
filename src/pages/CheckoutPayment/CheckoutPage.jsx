@@ -6,6 +6,8 @@ import Button from "components/Button";
 import AddressCard from "components/AddressCard";
 import CartItem from "components/CartItem";
 import NewAddressModal from "components/Modals/NewAddressModal";
+import PlusIcon from "assets/icons/plus.svg";
+import ArrowDownIcon from "assets/icons/arrow-down-2.svg";
 import { listAddress, cartList } from "data";
 
 import "./CheckoutPayment.scss";
@@ -63,7 +65,7 @@ export default function CheckoutPage() {
                                             onClick={() => setOpen(true)}
                                         >
                                             <img
-                                                src="./src/assets/icons/plus.svg"
+                                                src={PlusIcon}
                                                 alt=""
                                                 className="user-address__btn-icon"
                                             />
@@ -128,7 +130,7 @@ export default function CheckoutPage() {
                                                     className="cart-info__continue-link"
                                                 >
                                                     <img
-                                                        src="./src/assets/icons/arrow-down-2.svg"
+                                                        src={ArrowDownIcon}
                                                         alt=""
                                                         className="cart-info__continue-icon icon"
                                                     />

@@ -1,30 +1,34 @@
-import React, { useEffect, useRef, useState } from 'react'
-import './Form.scss'
+import React, { useEffect, useRef, useState } from "react";
+import SearchIcon from "assets/icons/search.svg";
+import "./Form.scss";
 
 const removeDiacritics = (str) => {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    return str
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
 };
 
-export default function FormSelectInput({
-    name = '',
-    type = 'text',
-    placeholder = '',
-    id = '',
-    className = '',
-    options = [],
-    defaultValue,
-}) {
+export default function FormSelectInput(props) {
+    const {
+        name,
+        placeholder,
+        id,
+        className,
+        defaultValue,
+        options = [],
+        type = "text",
+    } = props;
     const searchInputRef = useRef(null);
     const wrapperRef = useRef(null);
     const [open, setOpen] = useState(false);
-    const [selected, setSelected] = useState(defaultValue || '');
-    const [search, setSearch] = useState('');
-
+    const [selected, setSelected] = useState(defaultValue || "");
+    const [search, setSearch] = useState("");
 
     const handleClose = () => {
         setOpen(false);
-        setSearch('');
-    }
+        setSearch("");
+    };
 
     const handleClickOutside = (event) => {
         if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
@@ -35,9 +39,11 @@ export default function FormSelectInput({
     const handleClickOption = (value) => {
         setSelected(value);
         handleClose();
-    }
+    };
 
-    const filtered = options.filter((item) => removeDiacritics(item).includes(removeDiacritics(search)))
+    const filtered = options.filter((item) =>
+        removeDiacritics(item).includes(removeDiacritics(search))
+    );
 
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
@@ -68,12 +74,17 @@ export default function FormSelectInput({
                 value={selected}
                 onFocus={() => {
                     setOpen(true);
-                    setSearch('');
+                    setSearch("");
                 }}
             />
             {/* Form options here */}
-            <div className={`form__select-dialog ${open ? 'show' : 'hide'}`} id="city-dialog">
-                <h2 className="form__dialog-heading d-none d-sm-block">City/District/Town</h2>
+            <div
+                className={`form__select-dialog ${open ? "show" : "hide"}`}
+                id="city-dialog"
+            >
+                <h2 className="form__dialog-heading d-none d-sm-block">
+                    City/District/Town
+                </h2>
 
                 <button
                     className="form__close-dialog d-none d-sm-block"
@@ -92,15 +103,28 @@ export default function FormSelectInput({
                         placeholder="Search"
                         value={search}
                     />
-                    <img src="assets/icons/search.svg" alt="" className="form__search-icon icon" />
+                    <img
+                        src={SearchIcon}
+                        alt=""
+                        className="form__search-icon icon"
+                    />
                 </div>
 
                 <ul className="form__options-list">
-                    {filtered.length === 0 && <li className='form__option' style={{ fontStyle: 'italic' }}>No options matched</li>}
+                    {filtered.length === 0 && (
+                        <li
+                            className="form__option"
+                            style={{ fontStyle: "italic" }}
+                        >
+                            No options matched
+                        </li>
+                    )}
                     {filtered.map((item, index) => (
                         <li
                             key={index}
-                            className={`form__option ${item === selected ? 'form__option--current' : ''}`}
+                            className={`form__option ${
+                                item === selected ? "form__option--current" : ""
+                            }`}
                             onClick={() => handleClickOption(item)}
                         >
                             {item}
@@ -109,5 +133,5 @@ export default function FormSelectInput({
                 </ul>
             </div>
         </div>
-    )
+    );
 }

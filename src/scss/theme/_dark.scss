@@ -2,11 +2,10 @@
 
 html.dark {
   --text-color: #fff;
-  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%)
-    saturate(7485%) hue-rotate(49deg) brightness(102%) contrast(99%);
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7485%) hue-rotate(49deg) brightness(102%) contrast(99%);
 
   --body-bg-color: #292e39;
-  
+
   --header-bg-color: #171c28;
   --top-action-group-bg-color: #292e39;
   --top-action-group-shadow: rgba(0, 0, 0, 0.2);
@@ -52,7 +51,7 @@ html.dark {
   --filter-shadow: rgba(0, 0, 0, 0.40);
   --filter-form-tag-bg: #171C28;
   --filter-arrow-color: brightness(0) saturate(100%) invert(15%) sepia(7%) saturate(1867%) hue-rotate(184deg) brightness(91%) contrast(88%);
-  
+
   // Footer
   --footer-bg-color: var(--header-bg-color);
   --footer-text-color: #9e9da6;
@@ -62,7 +61,7 @@ html.dark {
   --auth-intro-bg: #171C28;
   --auth-text: #B9BABE;
   --auth-icon-filter: brightness(0) saturate(100%) invert(86%) sepia(7%) saturate(104%) hue-rotate(190deg) brightness(87%) contrast(89%);
-  
+
   // Breadcrumbs
   --breadcrumbs-bg: #171C28;
   --breadcrumbs-shadow: rgba(23, 28, 40, 0.20);
@@ -76,7 +75,7 @@ html.dark {
 
   // Search bar
   --search-bar-bg: #171C28;
-  
+
   // Review card
   --review-card-bg: #171C28;
 
@@ -107,6 +106,8 @@ html.dark {
   --theme-btn-bg: #292e39;
   --theme-btn-circle-pos: translateX(26px);
   --theme-btn-circle-color: #fff;
+  
+  --select-option-bg: #171c28;
 
   @include abstracts.screen(lg) {
     --header-lg-shadow: rgba(0, 0, 0, 0.20);
@@ -116,4 +117,6 @@ html.dark {
     --product-detail-bg: #292E39;
     --product-info-bg: #171C28;
   }
+
+
 }

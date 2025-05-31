@@ -1,6 +1,8 @@
-import "./ProductCard.scss";
 import { Link } from "react-router-dom";
 import LikeButton from "../Button/LikeButton";
+import StarIcon from "assets/icons/star.svg";
+
+import "./ProductCard.scss";
 
 export default function ProductCard(props) {
     const {
@@ -34,7 +36,7 @@ export default function ProductCard(props) {
                     <span className="product-card__price">${price}</span>
                     <div className="product-card__rating">
                         <img
-                            src="assets/icons/star.svg"
+                            src={StarIcon}
                             alt=""
                             className="product-card__star"
                         />

@@ -1,17 +1,15 @@
-import React from 'react'
+import React from "react";
 
-export default function Form({
-    children,
-    onSubmit,
-    className = '',
-    ...props
-}) {
+export default function Form({ children, onSubmit, className, ...props }) {
+
+    /** Side Effect */
     const handleSubmit = (e) => {
         e.preventDefault();
         if (onSubmit) {
             onSubmit(e);
         }
-    }
+    };
+
     return (
         <form
             className={`form ${className}`}
@@ -20,5 +18,5 @@ export default function Form({
         >
             {children}
         </form>
-    )
+    );
 }

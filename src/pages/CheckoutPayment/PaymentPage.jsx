@@ -1,19 +1,17 @@
-import React from 'react'
-import './CheckoutPayment.scss'
-import SearchBar from '../../components/SearchBar'
-import BreadCrumbs from '../../components/BreadCrumbs'
-import { Link } from 'react-router-dom'
-import Button from '../../components/Button'
-import PaymentItem from '../../components/PaymentItem'
-import { dataSrc } from '../../data/DataSource'
-import { Form, FormGroup, FormInput, FormLabel, FormRow } from '../../components/Form'
+import { Link } from "react-router-dom";
+import SearchBar from "components/SearchBar";
+import BreadCrumbs from "components/BreadCrumbs";
+import Button from "components/Button";
+import PaymentItem from "components/PaymentItem";
+import { Form, FormInput, FormRow } from "components/Form";
+import { cartList } from "data";
 
-const pathnames = ['Home', 'Cart', 'Checkout', 'Payment']
+import "./CheckoutPayment.scss";
 
+const pathnames = ["Home", "Cart", "Checkout", "Payment"];
 const shipping = 10;
-
-const totalPrice = dataSrc.cartList.reduce((total, item) => {
-    return (total + item.product.price * item.quantity);
+const totalPrice = cartList.reduce((total, item) => {
+    return total + item.product.price * item.quantity;
 }, 0);
 
 export default function PaymentPage() {
@@ -25,7 +23,10 @@ export default function PaymentPage() {
                 </div>
 
                 <div className="cart-container">
-                    <BreadCrumbs pathnames={pathnames} className='cart-main__breadcrumbs' />
+                    <BreadCrumbs
+                        pathnames={pathnames}
+                        className="cart-main__breadcrumbs"
+                    />
                 </div>
 
                 <div className="cart-container">
@@ -34,20 +35,29 @@ export default function PaymentPage() {
                             <div className="cart-info">
                                 <div className="cart-info__row">
                                     <h1 className="cart-info__heading cart-info__heading--no-margin">
-                                        1. Shipping, arrives between Mon, May 16—Tue, May 24
+                                        1. Shipping, arrives between Mon, May
+                                        16—Tue, May 24
                                     </h1>
 
                                     <div className="address-card__control">
                                         <Link to="/checkout">
                                             <Button className="btn--text address-card__btn">
-                                                <img src="./src/assets/icons/edit.svg" alt="" className="address-card__btn-icon icon" />
+                                                <img
+                                                    src="./src/assets/icons/edit.svg"
+                                                    alt=""
+                                                    className="address-card__btn-icon icon"
+                                                />
                                                 Edit
                                             </Button>
                                         </Link>
                                     </div>
                                 </div>
                                 <PaymentItem />
-                                <PaymentItem title='Items details' desc={`${dataSrc.cartList.length} item(s)`} hasLink={true} />
+                                <PaymentItem
+                                    title="Items details"
+                                    desc={`${cartList.length} item(s)`}
+                                    hasLink={true}
+                                />
                             </div>
 
                             <div className="cart-info">
@@ -57,12 +67,20 @@ export default function PaymentPage() {
                                     </h2>
                                 </div>
                                 <div className="cart-info__separate"></div>
-                                <h3 className="cart-info__sub-heading cart-info__sub-heading--smaller">Availeble Shipping method</h3>
+                                <h3 className="cart-info__sub-heading cart-info__sub-heading--smaller">
+                                    Availeble Shipping method
+                                </h3>
                                 <div className="payment-item">
-                                    <img src="./src/assets/img/payment/delevery-1.png" alt="" className="payment-item__img" />
+                                    <img
+                                        src="./src/assets/img/payment/delevery-1.png"
+                                        alt=""
+                                        className="payment-item__img"
+                                    />
                                     <div className="payment-item__content">
                                         <div className="payment-item__left">
-                                            <h2 className="user-address__title">Fedex Delivery</h2>
+                                            <h2 className="user-address__title">
+                                                Fedex Delivery
+                                            </h2>
                                             <p className="user-address__desc">
                                                 Delivery: 2-3 days work
                                             </p>
@@ -70,7 +88,12 @@ export default function PaymentPage() {
                                         <div className="payment-item__right payment-item__right--sm-left">
                                             <div className="address-card__choose">
                                                 <label className="address-card__checkbox payment-item__checkbox">
-                                                    <input type="checkbox" className="address-card__checkbox-input payment-item__checkbox-input" checked />
+                                                    <input
+                                                        type="checkbox"
+                                                        className="address-card__checkbox-input payment-item__checkbox-input"
+                                                        checked
+                                                        onChange={() => {}}
+                                                    />
                                                     <span className="payment-item__cost">
                                                         Free
                                                     </span>
@@ -80,10 +103,16 @@ export default function PaymentPage() {
                                     </div>
                                 </div>
                                 <div className="payment-item">
-                                    <img src="./src/assets/img/payment/delevery-2.png" alt="" className="payment-item__img" />
+                                    <img
+                                        src="./src/assets/img/payment/delevery-2.png"
+                                        alt=""
+                                        className="payment-item__img"
+                                    />
                                     <div className="payment-item__content">
                                         <div className="payment-item__left">
-                                            <h2 className="user-address__title">DHL Delivery</h2>
+                                            <h2 className="user-address__title">
+                                                DHL Delivery
+                                            </h2>
                                             <p className="user-address__desc">
                                                 Delivery: 2-3 days work
                                             </p>
@@ -91,7 +120,10 @@ export default function PaymentPage() {
                                         <div className="payment-item__right payment-item__right--sm-left">
                                             <div className="address-card__choose">
                                                 <label className="address-card__checkbox payment-item__checkbox">
-                                                    <input type="checkbox" className="address-card__checkbox-input payment-item__checkbox-input" />
+                                                    <input
+                                                        type="checkbox"
+                                                        className="address-card__checkbox-input payment-item__checkbox-input"
+                                                    />
                                                     <span className="payment-item__cost">
                                                         $12.00
                                                     </span>
@@ -108,74 +140,80 @@ export default function PaymentPage() {
                                     Payment Details
                                 </h1>
                                 <p className="user-address__desc">
-                                    Complete your purchase item by providing your payment details order.
+                                    Complete your purchase item by providing
+                                    your payment details order.
                                 </p>
-
 
                                 <Form className="payment-form">
                                     <div className="payment-form__input-wrap">
                                         <FormInput
-                                            type='email'
-                                            id='email'
-                                            label='Email'
-                                            name='email'
+                                            type="email"
+                                            id="email"
+                                            label="Email"
+                                            name="email"
                                             require={true}
-                                            placeholder='Email Address'
-                                            inputClass='payment-form__input'
-                                            labelClass='payment-form__label'
-                                            errMessage='The email is incorrect format!'
+                                            placeholder="Email Address"
+                                            inputClass="payment-form__input"
+                                            labelClass="payment-form__label"
+                                            errMessage="The email is incorrect format!"
                                         />
 
                                         <FormInput
-                                            type='text'
-                                            id='card-holder'
-                                            label='Card Holder'
-                                            name='Card Holder'
+                                            type="text"
+                                            id="card-holder"
+                                            label="Card Holder"
+                                            name="Card Holder"
                                             require={true}
-                                            placeholder='Card Holder'
-                                            inputClass='payment-form__input'
-                                            labelClass='payment-form__label'
+                                            placeholder="Card Holder"
+                                            inputClass="payment-form__input"
+                                            labelClass="payment-form__label"
                                         />
 
                                         <FormInput
-                                            type='text'
-                                            id='card-details'
-                                            label='Card Details'
-                                            name='Card Details'
+                                            type="text"
+                                            id="card-details"
+                                            label="Card Details"
+                                            name="Card Details"
                                             require={true}
-                                            placeholder='Card Details'
-                                            inputClass='payment-form__input'
-                                            labelClass='payment-form__label'
+                                            placeholder="Card Details"
+                                            inputClass="payment-form__input"
+                                            labelClass="payment-form__label"
                                         />
 
                                         <FormRow>
                                             <FormInput
-                                                type='text'
+                                                type="text"
                                                 require={true}
-                                                placeholder='MM/YY'
-                                                inputClass='payment-form__input'
-                                                labelClass='payment-form__label'
+                                                placeholder="MM/YY"
+                                                inputClass="payment-form__input"
+                                                labelClass="payment-form__label"
                                             />
                                             <FormInput
-                                                type='text'
+                                                type="text"
                                                 require={true}
-                                                placeholder='CVC'
-                                                inputClass='payment-form__input'
-                                                labelClass='payment-form__label'
+                                                placeholder="CVC"
+                                                inputClass="payment-form__input"
+                                                labelClass="payment-form__label"
                                             />
                                         </FormRow>
                                     </div>
 
                                     <div className="cart-info__row">
                                         <span>
-                                            Subtotal <span className="cart-info__sub-label">(items)</span>
+                                            Subtotal{" "}
+                                            <span className="cart-info__sub-label">
+                                                (items)
+                                            </span>
                                         </span>
-                                        <span>{dataSrc.cartList.length}</span>
+                                        <span>{cartList.length}</span>
                                     </div>
 
                                     <div className="cart-info__row">
                                         <span>
-                                            Price <span className="cart-info__sub-label">(Total)</span>
+                                            Price{" "}
+                                            <span className="cart-info__sub-label">
+                                                (Total)
+                                            </span>
                                         </span>
                                         <span>${totalPrice}</span>
                                     </div>
@@ -184,9 +222,9 @@ export default function PaymentPage() {
                                         <span>${shipping}</span>
                                     </div>
 
-                                    <div class="cart-info__separate"></div>
+                                    <div className="cart-info__separate"></div>
 
-                                    <div class="cart-info__row">
+                                    <div className="cart-info__row">
                                         <span>Estimated Total</span>
                                         <span>${totalPrice + shipping}</span>
                                     </div>
@@ -201,5 +239,5 @@ export default function PaymentPage() {
                 </div>
             </div>
         </main>
-    )
+    );
 }

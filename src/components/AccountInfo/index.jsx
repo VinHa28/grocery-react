@@ -1,6 +1,7 @@
 import './AccountInfo.scss'
 
 export default function AccountInfo(props) {
+    /** Data Props */
     const { title, desc, icon } = props;
 
     return (

@@ -1,1 +1,9 @@
 export { default as provinces } from "./provinces";
+export { default as slideShows } from './slideShows';
+export { default as product } from './productDetail';
+export { default as listProducts } from './listProduct';
+export { default as listCategories } from './listCategories';
+export { default as cartList } from './cartList';
+export { default as listAddress } from './listAddress';
+export { default as user } from './user';
+export { default as departments } from './departments';

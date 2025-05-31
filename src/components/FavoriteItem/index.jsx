@@ -1,13 +1,10 @@
-import React from 'react'
-import './FavoriteItem.scss'
-import { Link } from 'react-router-dom'
-import Button from '../Button'
-export default function FavoriteItem({
-    img, 
-    title,
-    shortDesc,
-    price,
-}) {
+import { Link } from "react-router-dom";
+import Button from "../Button";
+
+import "./FavoriteItem.scss";
+
+export default function FavoriteItem(props) {
+    const { img, title, shortDesc, price } = props;
     return (
         <article className="favorite-item">
             <img src={img} alt="" className="favorite-item__thumb" />
@@ -23,5 +20,5 @@ export default function FavoriteItem({
                 </div>
             </div>
         </article>
-    )
+    );
 }

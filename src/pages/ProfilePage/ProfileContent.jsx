@@ -2,6 +2,9 @@ import PaymentCard from 'components/PaymentCard'
 import AccountInfo from 'components/AccountInfo'
 import FavoriteItem from 'components/FavoriteItem'
 import PlusIcon from "assets/icons/plus.svg";
+import MailCommunicationIcon from 'assets/icons/mail-comucation.svg';
+import AddressIcon from 'assets/icons/address.svg';
+import PhoneIcon from 'assets/icons/phone.svg';
 
 import './ProfilePage.scss'
 
@@ -47,16 +50,16 @@ export default function ProfileContent({
                 <div className="row row-cols-2 g-3 row-cols-xl-1 gy-md-2">
                     <div className="col">
                         <a href="#!">
-                            <AccountInfo title='Email address' desc={user?.email} icon='../src/assets/icons/mail-comucation.svg'/>
+                            <AccountInfo title='Email address' desc={user?.email} icon={MailCommunicationIcon}/>
                         </a>
                     </div>
                     <div className="col">
                         <a href="#!">
-                            <AccountInfo icon='../src/assets/icons/phone.svg' title='Phone number' desc={user?.phoneNumber} />
+                            <AccountInfo icon={PhoneIcon} title='Phone number' desc={user?.phoneNumber} />
                         </a>
                     </div>
                     <div className="col">
-                        <AccountInfo title='Address' desc={user?.address} icon='../src/assets/icons/address.svg' />
+                        <AccountInfo title='Address' desc={user?.address} icon={AddressIcon} />
                     </div>
                 </div>
 

@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
+import { Form, FormInput, FormRow } from "components/Form";
 import SearchBar from "components/SearchBar";
 import BreadCrumbs from "components/BreadCrumbs";
 import Button from "components/Button";
 import PaymentItem from "components/PaymentItem";
-import { Form, FormInput, FormRow } from "components/Form";
+import EditIcon from "assets/icons/edit.svg";
+import Delivery1Img from "img/payment/delevery-1.png";
+import Delivery2Img from "img/payment/delevery-2.png";
 import { cartList } from "data";
 
 import "./CheckoutPayment.scss";
 
+/**Consts */
 const pathnames = ["Home", "Cart", "Checkout", "Payment"];
 const shipping = 10;
 const totalPrice = cartList.reduce((total, item) => {
@@ -43,7 +47,7 @@ export default function PaymentPage() {
                                         <Link to="/checkout">
                                             <Button className="btn--text address-card__btn">
                                                 <img
-                                                    src="./src/assets/icons/edit.svg"
+                                                    src={EditIcon}
                                                     alt=""
                                                     className="address-card__btn-icon icon"
                                                 />
@@ -72,7 +76,7 @@ export default function PaymentPage() {
                                 </h3>
                                 <div className="payment-item">
                                     <img
-                                        src="./src/assets/img/payment/delevery-1.png"
+                                        src={Delivery1Img}
                                         alt=""
                                         className="payment-item__img"
                                     />
@@ -104,7 +108,7 @@ export default function PaymentPage() {
                                 </div>
                                 <div className="payment-item">
                                     <img
-                                        src="./src/assets/img/payment/delevery-2.png"
+                                        src={Delivery2Img}
                                         alt=""
                                         className="payment-item__img"
                                     />

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { capitalizeFirstLetter } from 'utils/utils';
-
+import ArrowRight from "assets/icons/arrow-right.svg";
 import './BreadCrumbs.scss'
 
 
@@ -22,7 +22,7 @@ export default function BreadCrumbs({
               {/* <Link to={routeTo} className="breadcrumbs__link">   */}
               <Link to='#' className="breadcrumbs__link">
                 {capitalizeFirstLetter(name)}
-                <img src="./src/assets/icons/arrow-right.svg" alt="" />
+                <img src={ArrowRight} alt="" />
               </Link>
             </li>) : (
             <li key={routeTo}>

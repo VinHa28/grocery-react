@@ -56,7 +56,7 @@
     &__select-options {
         position: absolute;
         top: calc(100% + 10px);
-        background: #fff;
+        background: var(--select-option-bg);
         left: 0px;
         width: 95%;
         border-radius: 4px;

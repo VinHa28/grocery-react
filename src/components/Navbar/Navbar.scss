@@ -182,7 +182,7 @@
     position: relative;
 
     &::before {
-      content: url("../src/assets/icons/dropdown-arrow.svg");
+      content: url("assets/icons/dropdown-arrow.svg");
       position: absolute;
       top: -13px;
       left: var(--arrow-left-pos);

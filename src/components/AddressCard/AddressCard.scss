@@ -29,7 +29,7 @@
             cursor: pointer;
 
             &:checked::before {
-                content: url("../../assets/icons/checkbox-checked.svg");
+                content: url("assets/icons/checkbox-checked.svg");
             }
 
             &:not(:checked)::before {
@@ -37,7 +37,7 @@
             }
 
             &::before {
-                content: url("../../assets/icons/checkbox-uncheck.svg");
+                content: url("assets/icons/checkbox-uncheck.svg");
             }
         }
     }

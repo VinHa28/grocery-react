@@ -3,6 +3,9 @@ import ThemeButton from "../Button/ThemeButton";
 import NavbarItem from "./NavbarItem";
 import useBodyScrollLock from "commons/useBodyScrollLock";
 import { cartList, user, departments } from "data";
+import ArrowLeft from "assets/icons/arrow-left.svg";
+import BuyIcon from "assets/icons/buy.svg";
+import HeartIcon from "assets/icons/heart.svg";
 
 import "./Navbar.scss";
 
@@ -24,8 +27,8 @@ export default function Navbar({ open = false, setOpen = () => {} }) {
             id: 3,
             name: "Beauty",
             hasMainMenu: false,
-            data: departments[2].columns,
-            columnPerGroup: departments[2].columnPerGroup,
+            data: departments[0].columns,
+            columnPerGroup: departments[0].columnPerGroup,
         },
     ];
 
@@ -36,14 +39,14 @@ export default function Navbar({ open = false, setOpen = () => {} }) {
                 className="navbar__close-btn"
                 onClick={() => setOpen(false)}
             >
-                <img src="./src/assets/icons/arrow-left.svg" alt="" />
+                <img src={ArrowLeft} alt="" />
             </button>
 
             <ThemeButton className="d-none d-md-block" />
 
             <Link to="/cart" className="nav-btn d-none d-md-flex">
                 <img
-                    src="./src/assets/icons/buy.svg"
+                    src={BuyIcon}
                     alt=""
                     className="icon nav-btn__icon"
                 />
@@ -53,7 +56,7 @@ export default function Navbar({ open = false, setOpen = () => {} }) {
 
             <Link to="/favorite" className="nav-btn d-none d-md-flex">
                 <img
-                    src="./src/assets/icons/heart.svg"
+                    src={HeartIcon}
                     alt=""
                     className="icon nav-btn__icon"
                 />

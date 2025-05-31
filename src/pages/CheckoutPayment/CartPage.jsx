@@ -5,6 +5,7 @@ import CartItem from "components/CartItem";
 import { Link } from "react-router-dom";
 import Button from "components/Button";
 import GiftItem from "components/GiftItem";
+import ArrowDownIcon from "assets/icons/arrow-down-2.svg";
 import { cartList } from "data";
 
 import "./CheckoutPayment.scss";
@@ -60,7 +61,7 @@ export default function CartPage() {
                                                     className="cart-info__continue-link"
                                                 >
                                                     <img
-                                                        src="./src/assets/icons/arrow-down-2.svg"
+                                                        src={ArrowDownIcon}
                                                         className="cart-info__continue-icon icon"
                                                     />
                                                     Continue Shopping
